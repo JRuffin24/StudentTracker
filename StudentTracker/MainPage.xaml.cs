@@ -21,12 +21,17 @@ namespace StudentTracker
 
         async void AddTerm_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddTerm());
+            await Navigation.PushAsync(new AddClass());
         }
 
        async void EditTerm_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditTerm());
+        }
+
+        public void MainExpander_Tapped(object sender, EventArgs e)
+        {
+
         }
     }
 }

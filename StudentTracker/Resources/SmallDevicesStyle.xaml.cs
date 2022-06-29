@@ -7,23 +7,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace StudentTracker.Views
+namespace StudentTracker
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class AddTerm : ContentPage
+    public partial class SmallDevicesStyle : ResourceDictionary
     {
-        public AddTerm()
+        public static SmallDevicesStyle SharedInstance { get; } = new SmallDevicesStyle();
+        public SmallDevicesStyle()
         {
             InitializeComponent();
-        }
-
-        private void AddTermButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
-        private void CancelButton_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }
