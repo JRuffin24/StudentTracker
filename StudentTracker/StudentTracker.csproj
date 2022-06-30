@@ -21,10 +21,10 @@
     <EmbeddedResource Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\GeneralDevicesStyle.xaml">
+    <EmbeddedResource Update="GeneralDevicesStyle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Resources\SmallDevicesStyle.xaml">
+    <EmbeddedResource Update="SmallDevicesStyle.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AddAssessment.xaml">
@@ -51,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Resources\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
@@ -58,7 +59,7 @@
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Resources\GeneralDevicesStyle.xaml.cs">
+    <Compile Update="GeneralDevicesStyle.xaml.cs">
       <DependentUpon>GeneralDevicesStyle.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
