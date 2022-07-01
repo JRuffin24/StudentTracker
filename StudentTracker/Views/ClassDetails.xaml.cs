@@ -16,13 +16,13 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
-        private void AddAssessmentButton_Clicked(object sender, EventArgs e)
+        async void AssessmentButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new Assessments());
         }
-        private void EditClassButton_Clicked(object sender, EventArgs e)
+        async void EditClassButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new EditClass());
         }
         private void Notifications_OnToggle(object sender, EventArgs e)
         {

@@ -10,19 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace StudentTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditTerm : ContentPage
+    public partial class Assessments : ContentPage
     {
-        public EditTerm()
+        public Assessments()
         {
             InitializeComponent();
-        }
-        private void SaveButton_Clicked(object sender, EventArgs e)
-        {
-
-        }
-        private void CancelButton_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }
