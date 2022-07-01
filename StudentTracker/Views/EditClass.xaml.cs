@@ -25,5 +25,9 @@ namespace StudentTracker.Views
         {
 
         }
+        private void Notifications_OnToggle(object sender, EventArgs e)
+        {
+
+        }
     }
 }

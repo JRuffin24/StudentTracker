@@ -10,8 +10,8 @@
         <Label Text="Class Name" x:Name="Class" AbsoluteLayout.LayoutBounds="0.5,0.05, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
         <Entry x:Name="className" AbsoluteLayout.LayoutBounds="0.5,0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}" IsReadOnly="True"/>
 
-        <Label Text="Instructor Name" x:Name="Instructor" AbsoluteLayout.LayoutBounds="0.5,0.125, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructor" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+        <Label Text="Instructor Name" x:Name="InstructorName" AbsoluteLayout.LayoutBounds="0.5,0.125, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry x:Name="Instructor" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                Style="{StaticResource MainEntryStyle}" IsReadOnly="True"/>
 
         <Label Text="Instructor Phone" x:Name="Phone" AbsoluteLayout.LayoutBounds="0.5,0.22, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>

@@ -11,7 +11,7 @@
         <Entry x:Name="Assessment1NameText" AbsoluteLayout.LayoutBounds="0.5,0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
        
         <Label Text="Assessment Type" x:Name="Assessment1TypeLabel" AbsoluteLayout.LayoutBounds="0.5,0.2, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+        <Picker x:Name="Assessment1TypePicker"  AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
             <Picker.Items>
                 <x:String>Objective Assessment</x:String>
                 <x:String>Performance Assessment</x:String>
@@ -19,17 +19,17 @@
         </Picker>
         
         <Label Text="Assessment Start Date" x:Name="Test1StartDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.3, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="TestStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <DatePicker x:Name="Test1StartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
         <Label Text="Assessment End Date" x:Name="Test1EndDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.4, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="TestEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <DatePicker x:Name="Tes1tEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
        
         <Label Text="Assessment Name" x:Name="Assessment2NameLabel" AbsoluteLayout.LayoutBounds="0.5,0.05, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
         <Entry x:Name="Assessment2NameText" AbsoluteLayout.LayoutBounds="0.5,0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Assessment Type" x:Name="AssessmentTypeLabel" AbsoluteLayout.LayoutBounds="0.5,0.2, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+        <Label Text="Assessment Type" x:Name="Assessment2TypeLabel" AbsoluteLayout.LayoutBounds="0.5,0.2, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Picker x:Name="Assessment2TypePicker"  AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
             <Picker.Items>
                 <x:String>Objective Assessment</x:String>
                 <x:String>Performance Assessment</x:String>
@@ -37,7 +37,7 @@
         </Picker>
 
         <Label Text="Assessment 2 Start Date" x:Name="Test2StartDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.3, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="TestStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <DatePicker x:Name="Test2StartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
         <Label Text="Assessment 2 End Date" x:Name="Test2EndDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.4, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
         <DatePicker x:Name="Test2EndDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />

@@ -21,7 +21,7 @@ namespace StudentTracker
 
         async void AddTerm_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ClassDetails());
+            await Navigation.PushAsync(new AddAssessment());
         }
 
        async void EditTerm_Clicked(object sender, EventArgs e)
