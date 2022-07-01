@@ -16,5 +16,17 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
+        private void AddAssessmentButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void CancelButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+        private void Notifications_OnToggle(object sender, EventArgs e)
+        {
+
+        }
     }
 }
