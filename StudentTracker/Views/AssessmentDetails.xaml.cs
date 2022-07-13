@@ -20,5 +20,13 @@ namespace StudentTracker.Views
         {
 
         }
+        async void EditAssessmentButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EditAssessment());
+        }
+        private void CancelButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

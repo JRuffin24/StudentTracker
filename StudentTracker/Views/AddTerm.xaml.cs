@@ -1,4 +1,7 @@
-﻿using System;
+﻿using StudentTracker.Models;
+using StudentTracker.Services;
+using StudentTracker.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +19,23 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
+        //public AddTerm(Term newTerm)
+        //{
+        //    InitializeComponent();
+        //    termTitleText.Text = newTerm.TermName;
+        //    startDatePicker.Date = newTerm.StartDate;
+        //    EndDatePicker.Date = newTerm.EndDate;
+        //}
 
-        private void AddTermButton_Clicked(object sender, EventArgs e)
+        async void AddTermButton_Clicked(object sender, EventArgs e)
         {
-
+            await DatabaseService.AddTerm(termTitleText.Text, startDatePicker.Date, EndDatePicker.Date);
+            await Shell.Current.GoToAsync("..");
         }
-        private void CancelButton_Clicked(object sender, EventArgs e)
-        {
 
+        async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("..");
         }
     }
 }
