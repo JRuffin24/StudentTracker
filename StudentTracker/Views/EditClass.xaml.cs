@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentTracker.Models;
+using StudentTracker.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,18 +18,40 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
-        private void SaveButton_Clicked(object sender, EventArgs e)
+        public EditClass(Course course)
         {
+            InitializeComponent();
 
+            termID.Text = course.TermID.ToString();
+            classID.Text = course.Id.ToString();
+            classNameText.Text = course.CourseName;
+            instructorNameText.Text = course.InstructorName;
+            instructorPhoneText.Text = course.InstructorPhone;
+            instructorEmailText.Text = course.InstructorEmail;
+            classStartDatePicker.Date = course.ClassStartDate;
+            classEndDatePicker.Date = course.ClassEndDate;
+            classStatusPicker.SelectedItem = course.CourseStatus;
+            courseNotesText.Text = course.Notes;
+        }
+        async void SaveButton_Clicked(object sender, EventArgs e)
+        {
+            await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
+                instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+
+            await Navigation.PopAsync();
 
         }
-        private void CancelButton_Clicked(object sender, EventArgs e)
+        async void CancelButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopAsync();
         }
         private void Notifications_OnToggle(object sender, EventArgs e)
         {
 
+        }
+        async void AssessmentButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Assessments());
         }
     }
 }

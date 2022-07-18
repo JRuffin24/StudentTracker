@@ -11,21 +11,29 @@
         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
         <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
 
-        <Label Text="Term ID" x:Name="TermIDLabel" AbsoluteLayout.LayoutBounds="0.2,0.09, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30"/>
-        <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.2,0.12, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30" ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+        <Label Text="Term ID" x:Name="TermIDLabel" AbsoluteLayout.LayoutBounds="0.5, 0.09, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
+               ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
 
-        <Label Text="Term Title" x:Name="TermTitleLabel" AbsoluteLayout.LayoutBounds="0.2,0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30"/>
-        <Entry Text="{Binding TermName}" x:Name="termTitle"  AbsoluteLayout.LayoutBounds="0.2,0.20, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30" ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+        <Label Text="Term Title" x:Name="TermTitleLabel" AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
+        <Entry Text="{Binding TermName}" x:Name="termTitle"  AbsoluteLayout.LayoutBounds="0.5, 0.30, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
+                Style="{StaticResource MainEntryStyle}" ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
 
-        <Label Text="Start Date" x:Name="startDate" AbsoluteLayout.LayoutBounds="0.2,0.30, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30"/>
-        <DatePicker x:Name="startDatePicker"  AbsoluteLayout.LayoutBounds="0.2,0.40, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <Label Text="Start Date" x:Name="startDate" AbsoluteLayout.LayoutBounds="0.5, 0.40, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
+        <DatePicker x:Name="startDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
-        <Label Text="End Date" x:Name="endDate" AbsoluteLayout.LayoutBounds="0.2,0.50, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" FontSize="30"/>
-        <DatePicker x:Name="EndDatePicker"  AbsoluteLayout.LayoutBounds="0.2,0.60, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <Label Text="End Date" x:Name="endDate" AbsoluteLayout.LayoutBounds="0.5, 0.55, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
+        <DatePicker x:Name="EndDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.60, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
-        <Button Text="Save" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15,0.9,0.25,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="SaveButton_Clicked" />
-        <Button Text="Delete Term" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.95,0.9,0.25,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="DeleteButton_Clicked" />
-        <Button Text="Cancel" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.85,0.9,0.25,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="CancelButton_Clicked" />
+        <Label Text="View Class List" x:Name="Class list label" AbsoluteLayout.LayoutBounds="0.5, 0.60, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
+        <ImageButton Source="classListIcon.jpg" HorizontalOptions="Center" Clicked="ClassList_Clicked"/>
+
+        <Button Text="Save" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.9, 0.28, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
+                Clicked="SaveButton_Clicked" Style="{StaticResource MainButtonStyle}" />
+        <Button Text="Delete Term" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.28, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Clicked="DeleteButton_Clicked" Style="{StaticResource MainButtonStyle}" />
+        <Button Text="Cancel" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.85, 0.9, 0.28, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Clicked="CancelButton_Clicked" Style="{StaticResource MainButtonStyle}" />
     </AbsoluteLayout>
 
 

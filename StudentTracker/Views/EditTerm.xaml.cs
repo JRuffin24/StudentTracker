@@ -29,17 +29,21 @@ namespace StudentTracker.Views
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
             await DatabaseService.UpdateTerm(Int32.Parse(termID.Text), termTitle.Text, startDatePicker.Date, EndDatePicker.Date);
-            await Shell.Current.GoToAsync("..");
+
+            await Navigation.PopAsync();
         }
         async void CancelButton_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            await Navigation.PopAsync();
         }
         async void DeleteButton_Clicked(object sender, EventArgs e)
         {
             var id = int.Parse(termID.Text);
+
             await DatabaseService.DeleteTerm(id);
-            await Shell.Current.GoToAsync("..");
+
+            await Navigation.PopAsync();
         }
+       
     }
 }

@@ -6,7 +6,11 @@
         <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
         <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
-        
+
+        <Label Text="Term ID" x:Name="TermIDLabel" AbsoluteLayout.LayoutBounds="0.5, 0.01, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.5, 0.04, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
+               ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+
         <Label Text="Class Name" x:Name="ClassName" AbsoluteLayout.LayoutBounds="0.5,0.05, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
         <Entry x:Name="classNameText" AbsoluteLayout.LayoutBounds="0.5,0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
 

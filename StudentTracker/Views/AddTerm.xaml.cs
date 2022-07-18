@@ -30,12 +30,13 @@ namespace StudentTracker.Views
         async void AddTermButton_Clicked(object sender, EventArgs e)
         {
             await DatabaseService.AddTerm(termTitleText.Text, startDatePicker.Date, EndDatePicker.Date);
-            await Shell.Current.GoToAsync("..");
+
+            await Navigation.PushAsync( new MainPage());
         }
 
         async void CancelButton_Clicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("..");
+            await Navigation.PopAsync();
         }
     }
 }

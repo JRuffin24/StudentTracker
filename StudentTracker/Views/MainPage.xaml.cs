@@ -3,6 +3,7 @@ using StudentTracker.Services;
 using StudentTracker.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 using System.Text;
@@ -11,17 +12,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace StudentTracker
+namespace StudentTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         public  MainPage()
         {
-            Term term = new Term();
-            Course course = new Course();
             InitializeComponent();
-                    
         }
         protected override async void OnAppearing()
         {
@@ -33,11 +31,6 @@ namespace StudentTracker
             await Navigation.PushAsync(new AddTerm());
         }
 
-        public void MainExpander_Tapped(object sender, EventArgs e)
-        {
-
-        }
-
         async void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if(e.CurrentSelection != null)
@@ -46,6 +39,10 @@ namespace StudentTracker
                 await Navigation.PushAsync(new EditTerm(term));
             }
         }
-        
+        async void ClassList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Classes());
+        }
+
     }
 }

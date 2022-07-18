@@ -18,7 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MainPage.xaml">
+    <EmbeddedResource Update="Views\Classes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="GeneralDevicesStyle.xaml">
@@ -61,7 +64,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainPage.xaml.cs">
+    <Compile Update="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="GeneralDevicesStyle.xaml.cs">

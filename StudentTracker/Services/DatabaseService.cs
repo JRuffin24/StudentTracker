@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using StudentTracker.Models;
+using Xamarin.Essentials;
 
 namespace StudentTracker.Services
 {
@@ -19,7 +20,7 @@ namespace StudentTracker.Services
                 return;
             }
             //get an absolute path to the database file
-            var databasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Terms.db");
+            var databasePath = Path.Combine(FileSystem.AppDataDirectory, "Terms.db");
 
             _db = new SQLiteAsyncConnection(databasePath);
 
