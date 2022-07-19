@@ -11,25 +11,25 @@
         <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.5, 0.04, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
                ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
 
-        <Label Text="Class Name" x:Name="ClassName" AbsoluteLayout.LayoutBounds="0.5,0.05, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="classNameText" AbsoluteLayout.LayoutBounds="0.5,0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
+        <Label Text="Class Name" x:Name="ClassName" AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry x:Name="classNameText" AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Instructor Name" x:Name="InstructorName" AbsoluteLayout.LayoutBounds="0.5,0.125, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+        <Label Text="Instructor Name" x:Name="InstructorName" AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Instructor Phone" x:Name="InstructorPhone" AbsoluteLayout.LayoutBounds="0.5,0.22, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+        <Label Text="Instructor Phone" x:Name="InstructorPhone" AbsoluteLayout.LayoutBounds="0.5, 0.3, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
             Style="{StaticResource MainEntryStyle}"   />
 
-        <Label Text="Start Date" x:Name="classStartDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.31, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.34, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <Label Text="Start Date" x:Name="classStartDateLabel" AbsoluteLayout.LayoutBounds="0.5, 0.4, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <DatePicker x:Name="classStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
-        <Label Text="End Date" x:Name="classEndDate" AbsoluteLayout.LayoutBounds="0.5,0.42, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.44, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+        <Label Text="End Date" x:Name="classEndDate" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <DatePicker x:Name="classEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.55, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
-        <Label Text="Course Status" x:Name="courseStatus" AbsoluteLayout.LayoutBounds="0.5,0.51, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.54, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
+        <Label Text="Course Status" x:Name="courseStatus" AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.65, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
             <Picker.Items>
                 <x:String>In-Progress</x:String>
                 <x:String>Completed</x:String>
@@ -38,8 +38,8 @@
             </Picker.Items>
         </Picker>
 
-        <Label Text="Notes" x:Name="courseNotes" AbsoluteLayout.LayoutBounds="0.5,0.62, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Editor x:Name="courseNotesText" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.65, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
+        <Label Text="Notes" x:Name="courseNotes" AbsoluteLayout.LayoutBounds="0.5,0.69, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
+        <Editor x:Name="courseNotesText" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.72, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
                 Style="{StaticResource MainEntryStyle}"/>
 
         <Label Text="Enable Notifications" x:Name="notifications" AbsoluteLayout.LayoutBounds="0.5,0.79, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>

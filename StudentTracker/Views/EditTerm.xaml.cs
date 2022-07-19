@@ -44,6 +44,13 @@ namespace StudentTracker.Views
 
             await Navigation.PopAsync();
         }
+
+        async void ClassList_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Classes());
+        }
+
+        
        
     }
 }

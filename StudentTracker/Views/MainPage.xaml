@@ -46,8 +46,7 @@
                         <Label Grid.Row="2" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">End Date:</Label>
                         <Label Text="{Binding EndDate}" Style="{StaticResource NormalTitleStyle}" Grid.Column="2" VerticalTextAlignment="Center" />
 
-                        <Label Text="View Class List" x:Name="Class list label" AbsoluteLayout.LayoutBounds="0.5, 0.60, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
-                        <ImageButton Source="classListIcon.jpg" HorizontalOptions="Center" Clicked="ClassList_Clicked"/>
+                        
                         
                     </Grid>
                 </StackLayout>

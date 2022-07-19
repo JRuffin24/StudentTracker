@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentTracker.Views.MainPage"
+             x:Class="StudentTracker.Views.Classes"
              Title="Class Page">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddTerm" Text="Add Class" Clicked="AddClass_Clicked" ></ToolbarItem>
+        <ToolbarItem x:Name="AddClass" Text="Add Class" Clicked="AddClass_Clicked" ></ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ClassCollectionView"
                     ItemsSource="{Binding Class}"
-                    EmptyView="No Terms to display"
+                    EmptyView="No classes to display"
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_OnSelectionChanged">
 

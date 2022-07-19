@@ -60,7 +60,7 @@
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                 Clicked="AssessmentButton_Clicked" Style="{StaticResource MainButtonStyle}" />
         
-        <Button Text="Delete Term" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.85, 0.25, 50"
+        <Button Text="Delete Class" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.85, 0.25, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                 Clicked="DeleteButton_Clicked" Style="{StaticResource MainButtonStyle}" />
 

@@ -53,5 +53,13 @@ namespace StudentTracker.Views
         {
             await Navigation.PushAsync(new Assessments());
         }
+        async void DeleteButton_Clicked(object sender, EventArgs e)
+        {
+            var id = int.Parse(ClassId);
+
+            await DatabaseService.DeleteCourse(id);
+
+            await Navigation.PopAsync();
+        }
     }
 }
