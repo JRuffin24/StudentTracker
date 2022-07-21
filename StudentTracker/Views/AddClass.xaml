@@ -2,48 +2,67 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentTracker.Views.AddClass">
+
     <AbsoluteLayout>
         <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
         <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
 
-        <Label Text="Term ID" x:Name="TermIDLabel" AbsoluteLayout.LayoutBounds="0.5, 0.01, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.5, 0.04, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
-               ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+        <StackLayout>
+            <Grid Padding="5" RowSpacing="0.5" ColumnSpacing="22">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Term ID" x:Name="TermIDLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry Text="{Binding Id}" x:Name="termID" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="Class Name" x:Name="ClassName" AbsoluteLayout.LayoutBounds="0.5, 0.1, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="classNameText" AbsoluteLayout.LayoutBounds="0.5, 0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Class Name" x:Name="ClassName" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="classNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Instructor Name" x:Name="InstructorName" AbsoluteLayout.LayoutBounds="0.5, 0.2, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5, 0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-               Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Instructor Phone" x:Name="InstructorPhone" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="Instructor Phone" x:Name="InstructorPhone" AbsoluteLayout.LayoutBounds="0.5, 0.3, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" AbsoluteLayout.LayoutBounds="0.5,0.35, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-            Style="{StaticResource MainEntryStyle}"   />
+                <Label Text="Instructor Email" x:Name="InstructorEmail" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorEmailText" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="Start Date" x:Name="classStartDateLabel" AbsoluteLayout.LayoutBounds="0.5, 0.4, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.45, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+                <Label Text="Start Date" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classStartDatePicker" />
 
-        <Label Text="End Date" x:Name="classEndDate" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.55, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+                <Label Text="Start Date" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classStartDatePicker" />
 
-        <Label Text="Course Status" x:Name="courseStatus" AbsoluteLayout.LayoutBounds="0.5, 0.6, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.65, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
-            <Picker.Items>
-                <x:String>In-Progress</x:String>
-                <x:String>Completed</x:String>
-                <x:String>Dropped</x:String>
-                <x:String>Not-Enrolled</x:String>
-            </Picker.Items>
-        </Picker>
+                <Label Text="Start Date" x:Name="classEndDateLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classEndDatePicker" />
 
-        <Label Text="Notes" x:Name="courseNotes" AbsoluteLayout.LayoutBounds="0.5,0.69, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Editor x:Name="courseNotesText" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.72, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
-                Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Course Status" x:Name="courseStatus" Style="{StaticResource NormalTitleStyle}"/>
+                <Picker x:Name="classStatusPicker">
+                    <Picker.Items>
+                        <x:String>In-Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>Not-Enrolled</x:String>
+                    </Picker.Items>
+                </Picker>
+                
+                <Label Text="Notes" x:Name="courseNotes" Style="{StaticResource NormalTitleStyle}"/>
+                <Editor x:Name="courseNotesText" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Enable Notifications" x:Name="notifications" AbsoluteLayout.LayoutBounds="0.5,0.79, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" AbsoluteLayout.LayoutBounds="0.5,0.8, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="XProportional,YProportional"/>
+                <Label Text="Enable Notifications" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
+                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" />
+            </Grid>
+        </StackLayout>
 
         <Button Text="Add Class" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15,0.9,0.25,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="AddClassButton_Clicked" />
         <Button Text="Cancel" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="silver"  AbsoluteLayout.LayoutBounds="0.85,0.9,0.25,50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="CancelButton_Clicked" />

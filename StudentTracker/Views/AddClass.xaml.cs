@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentTracker.Models;
+using StudentTracker.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,16 +18,21 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
-
-        private void AddClassButton_Clicked(object sender, EventArgs e)
+        public AddClass(Course course)
         {
-
+            InitializeComponent();
+            termID.Text = course.TermID.ToString();
         }
-        private void CancelButton_Clicked(object sender, EventArgs e)
+        async void AddClassButton_Clicked(object sender, EventArgs e)
         {
-
+            await DatabaseService.AddCourse(Int32.Parse(termID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, instructorPhoneText.Text,
+                classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
         }
-         void Notifications_OnToggle(object sender, EventArgs e)
+        async void CancelButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+         async void Notifications_OnToggle(object sender, EventArgs e)
         {
 
         }
