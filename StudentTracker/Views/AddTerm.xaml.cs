@@ -19,13 +19,7 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
-        //public AddTerm(Term newTerm)
-        //{
-        //    InitializeComponent();
-        //    termTitleText.Text = newTerm.TermName;
-        //    startDatePicker.Date = newTerm.StartDate;
-        //    EndDatePicker.Date = newTerm.EndDate;
-        //}
+   
 
         async void AddTermButton_Clicked(object sender, EventArgs e)
         {

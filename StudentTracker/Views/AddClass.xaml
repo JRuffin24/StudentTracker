@@ -21,33 +21,39 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=" Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Text="Term ID" x:Name="TermIDLabel" Style="{StaticResource NormalTitleStyle}"/>
-                <Entry Text="{Binding Id}" x:Name="termID" Style="{StaticResource MainEntryStyle}" />
+                
+                <!-- Move All rows down so Term ID is not in the blue-->
+                
+                <Label Text="Term ID" x:Name="TermIDLabel" Grid.Row="1" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry Text="{Binding Id}" x:Name="termID" Grid.Row="1" Grid.Column="2" Style="{StaticResource MainEntryStyle}" />
 
-                <Label Text="Class Name" x:Name="ClassName" Style="{StaticResource NormalTitleStyle}"/>
-                <Entry x:Name="classNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Class Name" x:Name="ClassName" Grid.Row="2" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="classNameText" Grid.Row="2" Grid.Column="2" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-                <Label Text="Instructor Phone" x:Name="InstructorPhone" Style="{StaticResource NormalTitleStyle}"/>
-                <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" Style="{StaticResource MainEntryStyle}" />
+                <Label Text="Instructor Name" x:Name="InstructorName" Grid.Row="3" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Grid.Row="3" Grid.Column="2" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
 
-                <Label Text="Instructor Email" x:Name="InstructorEmail" Style="{StaticResource NormalTitleStyle}"/>
-                <Entry x:Name="instructorEmailText" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
+                <Label Text="Instructor Phone" x:Name="InstructorPhone" Grid.Row="4" Grid.Column="1"  Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Grid.Row="4" Grid.Column="2" Keyboard="Telephone" Style="{StaticResource MainEntryStyle}" />
 
-                <Label Text="Start Date" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
-                <DatePicker x:Name="classStartDatePicker" />
+                <Label Text="Instructor Email" x:Name="InstructorEmail" Grid.Row="5" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorEmailText" ClearButtonVisibility="WhileEditing" Grid.Row="5" Grid.Column="2" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
 
-                <Label Text="Start Date" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
-                <DatePicker x:Name="classStartDatePicker" />
+                <Label Text="Start Date" Grid.Row="6" Grid.Column="1" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classStartDatePicker" Grid.Row="7" Grid.Column="1" />
 
-                <Label Text="Start Date" x:Name="classEndDateLabel" Style="{StaticResource NormalTitleStyle}"/>
-                <DatePicker x:Name="classEndDatePicker" />
+                <Label Text="End Date" x:Name="classEndDateLabel" Grid.Row="6" Grid.Column="2" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classEndDatePicker" Grid.Row="7" Grid.Column="2"/>
 
-                <Label Text="Course Status" x:Name="courseStatus" Style="{StaticResource NormalTitleStyle}"/>
-                <Picker x:Name="classStatusPicker">
+                <Label Text="Course Status" x:Name="courseStatus" Grid.Row="8" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Picker x:Name="classStatusPicker" Grid.Row="8" Grid.Column="2">
                     <Picker.Items>
                         <x:String>In-Progress</x:String>
                         <x:String>Completed</x:String>
@@ -55,12 +61,12 @@
                         <x:String>Not-Enrolled</x:String>
                     </Picker.Items>
                 </Picker>
-                
-                <Label Text="Notes" x:Name="courseNotes" Style="{StaticResource NormalTitleStyle}"/>
-                <Editor x:Name="courseNotesText" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-                <Label Text="Enable Notifications" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
-                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" />
+                <Label Text="Notes" x:Name="courseNotes" Grid.Row="9" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <Editor x:Name="courseNotesText" Grid.Row="10" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
+
+                <Label Text="Enable Notifications" Grid.Row="11" Grid.Column="1" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
+                <Switch x:Name="EnableNotificationsToggle" Grid.Row="11" Grid.Column="2" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" />
             </Grid>
         </StackLayout>
 
