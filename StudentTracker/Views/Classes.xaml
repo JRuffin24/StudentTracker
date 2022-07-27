@@ -3,12 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentTracker.Views.Classes"
              Title="Class Page">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddClass" Text="Add Class" Clicked="AddClass_Clicked" ></ToolbarItem>
-    </ContentPage.ToolbarItems>
 
     <CollectionView x:Name="ClassCollectionView"
-                    ItemsSource="{Binding Class}"
+                    ItemsSource="{Binding Course}"
                     EmptyView="No classes to display"
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_OnSelectionChanged">
@@ -20,8 +17,13 @@
 
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout>
-                    <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" BackgroundColor="WhiteSmoke">
+                <AbsoluteLayout>
+                    <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+                    <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
+                    <Image Source="WGULogo.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
+
+                    <StackLayout>
+                    <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" Margin="25"  BackgroundColor="WhiteSmoke">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -29,19 +31,15 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
+                            </Grid.RowDefinitions>
 
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                            <ColumnDefinition Width="Auto"></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <!--                       <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
-                        <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />  -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
-                        <Label Text="{Binding Class}" Style="{StaticResource NormalTitleStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
+                        <Label Text="{Binding ClassName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Instructor Name:</Label>
                         <Label Text="{Binding InstructorName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" />
@@ -60,11 +58,11 @@
 
                         <Label Grid.Row="6" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Course Status:</Label>
                         <Label Text="{Binding CourseStatus}" Style="{StaticResource NormalTitleStyle}" Grid.Row="6" Grid.Column="1" VerticalTextAlignment="Center" />
-
                         
 
-                    </Grid>
+                        </Grid>
                 </StackLayout>
+                </AbsoluteLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

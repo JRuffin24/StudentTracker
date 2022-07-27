@@ -7,64 +7,81 @@
         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
         <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
 
-        <Label Text="Class ID" x:Name="classIDLabel" AbsoluteLayout.LayoutBounds="0.5, 0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry Text="{Binding Id}" x:Name="classID"  AbsoluteLayout.LayoutBounds="0.5, 0.09, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
-               ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+        <StackLayout>
+            <Grid Padding="5" RowSpacing="0.5" ColumnSpacing="22" Margin="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
 
-        <Label Text="Term ID" x:Name="TermIDLabel" AbsoluteLayout.LayoutBounds="0.2, 0.06, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry Text="{Binding Id}" x:Name="termID"  AbsoluteLayout.LayoutBounds="0.2, 0.09, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainEntryStyle}"
-               ClearButtonVisibility="WhileEditing" IsReadOnly="True"/>
+                <!-- Move All rows down so Term ID is not in the blue-->
+                <Label Text="Term ID" x:Name="TermIDLabel" Grid.Row="0" Grid.Column="0"  Style="{StaticResource NormalTitleStyle}"/>
+                <Entry Text="{Binding Id}" x:Name="termID" Grid.Row="0" Grid.Column="1"  Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
 
-        <Label Text="Class Name" x:Name="ClassName" AbsoluteLayout.LayoutBounds="0.5,0.09, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="classNameText" AbsoluteLayout.LayoutBounds="0.5,0.12, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" ClearButtonVisibility="WhileEditing" Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Class ID" x:Name="ClassIDLabel" Grid.Row="1" Grid.Column="0"  Style="{StaticResource NormalTitleStyle}"/>
+                <Entry Text="{Binding ClassId}" x:Name="classID" Grid.Row="1" Grid.Column="1"  Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
 
-        <Label Text="Instructor Name" x:Name="InstructorName" AbsoluteLayout.LayoutBounds="0.5,0.125, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.15, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-               Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Class Name" x:Name="ClassName" Grid.Row="3" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="classNameText" Grid.Row="3" Grid.Column="1" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Instructor Phone" x:Name="InstructorPhone" AbsoluteLayout.LayoutBounds="0.5,0.22, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" AbsoluteLayout.LayoutBounds="0.5,0.25, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-            Style="{StaticResource MainEntryStyle}"   />
+                <Label Text="Instructor Name" x:Name="InstructorName" Grid.Row="4" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorNameText" ClearButtonVisibility="WhileEditing" Grid.Row="4" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="Instructor Email" x:Name="InstructorEmail" AbsoluteLayout.LayoutBounds="0.5,0.27, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Entry x:Name="instructorEmailText" ClearButtonVisibility="WhileEditing" Keyboard="Telephone" AbsoluteLayout.LayoutBounds="0.5,0.29, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-            Style="{StaticResource MainEntryStyle}"   />
+                <Label Text="Instructor Phone" x:Name="InstructorPhone" Grid.Row="5" Grid.Column="0"  Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorPhoneText" ClearButtonVisibility="WhileEditing" Grid.Row="5" Grid.Column="1"  Keyboard="Telephone" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="Start Date" x:Name="classStartDateLabel" AbsoluteLayout.LayoutBounds="0.5,0.31, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classStartDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.34, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+                <Label Text="Instructor Email" x:Name="InstructorEmail" Grid.Row="6" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Entry x:Name="instructorEmailText" ClearButtonVisibility="WhileEditing" Grid.Row="6" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}" />
 
-        <Label Text="End Date" x:Name="classEndDate" AbsoluteLayout.LayoutBounds="0.5,0.42, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <DatePicker x:Name="classEndDatePicker"  AbsoluteLayout.LayoutBounds="0.5,0.44, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
+                <Label Text="Start Date" Grid.Row="7" Grid.Column="0" x:Name="classStartDateLabel" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classStartDatePicker" Grid.Row="8" Grid.Column="0" />
 
-        <Label Text="Course Status" x:Name="courseStatus" AbsoluteLayout.LayoutBounds="0.5,0.51, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Picker x:Name="classStatusPicker"  AbsoluteLayout.LayoutBounds="0.5,0.54, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional">
-            <Picker.Items>
-                <x:String>In-Progress</x:String>
-                <x:String>Completed</x:String>
-                <x:String>Dropped</x:String>
-                <x:String>Not-Enrolled</x:String>
-            </Picker.Items>
-        </Picker>
+                <Label Text="End Date" x:Name="classEndDateLabel" Grid.Row="7" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="classEndDatePicker" Grid.Row="8" Grid.Column="1" />
 
-        <Label Text="Notes" x:Name="courseNotes" AbsoluteLayout.LayoutBounds="0.5,0.62, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Editor x:Name="courseNotesText" Keyboard="Default" AbsoluteLayout.LayoutBounds="0.5,0.65, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 
-                Style="{StaticResource MainEntryStyle}"/>
+                <Label Text="Course Status" x:Name="courseStatus" Grid.Row="9" Grid.Column="0" Margin="20" Style="{StaticResource NormalTitleStyle}"/>
+                <Picker x:Name="classStatusPicker" Grid.Row="9" Grid.Column="1" Margin="20" >
+                    <Picker.Items>
+                        <x:String>In-Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>Not-Enrolled</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Notes" x:Name="courseNotes" Grid.Row="10" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Editor x:Name="courseNotesText" Grid.Row="10" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
-        <Label Text="Enable Notifications" x:Name="notifications" AbsoluteLayout.LayoutBounds="0.5,0.79, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource NormalTitleStyle}"/>
-        <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" AbsoluteLayout.LayoutBounds="0.5,0.8, AutoSize, AutoSize" AbsoluteLayout.LayoutFlags="XProportional,YProportional"/>
+                <Label Text="Enable Notifications" Grid.Row="11" Grid.Column="0" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
+                <Switch x:Name="EnableNotificationsToggle" Grid.Row="11" Grid.Column="1" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" Margin="20" />
 
-        <Button Text="Add Class" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15, 0.85, 0.25, 50" 
+            </Grid>
+        </StackLayout>
+        <Button Text="Save Edits" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15, 0.82, 0.25, 50" 
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="SaveButton_Clicked" />
 
-        <Button Text="Assessments" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.25, 50" 
+        <Button Text="Assessments" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.75, 0.82, 0.35, 55" 
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                 Clicked="AssessmentButton_Clicked" Style="{StaticResource MainButtonStyle}" />
-        
-        <Button Text="Delete Class" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.85, 0.25, 50"
+
+        <Button Text="Delete Class" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.93, 0.25, 55"
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
                 Clicked="DeleteButton_Clicked" Style="{StaticResource MainButtonStyle}" />
 
-        <Button Text="Cancel" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="silver"  AbsoluteLayout.LayoutBounds="0.5, 0.9, 0.25, 50" 
+        <Button Text="Cancel" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#0d47a1r"  AbsoluteLayout.LayoutBounds="0.75, 0.93, 0.25, 50" 
                 AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="CancelButton_Clicked" />
     </AbsoluteLayout>
 </ContentPage> 

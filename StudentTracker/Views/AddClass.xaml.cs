@@ -27,6 +27,8 @@ namespace StudentTracker.Views
         {
             await DatabaseService.AddCourse(Int32.Parse(termID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, instructorPhoneText.Text, classStartDatePicker.Date,
                 classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+            
+            await Navigation.PushAsync(new Classes());
         }
         async void CancelButton_Clicked(object sender, EventArgs e)
         {

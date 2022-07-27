@@ -33,10 +33,7 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
- <!--                       <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
-                        <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />  -->
-                        
+
                         <Label Grid.Row="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Term Name:</Label>
                         <Label Text="{Binding Term}" Style="{StaticResource NormalTitleStyle}" Grid.Column="1" VerticalTextAlignment="Center" />
 

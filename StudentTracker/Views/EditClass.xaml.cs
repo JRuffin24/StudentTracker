@@ -55,7 +55,8 @@ namespace StudentTracker.Views
         }
         async void DeleteButton_Clicked(object sender, EventArgs e)
         {
-            var id = int.Parse(ClassId);
+
+            var id = int.Parse(classID.Text);
 
             await DatabaseService.DeleteCourse(id);
 
