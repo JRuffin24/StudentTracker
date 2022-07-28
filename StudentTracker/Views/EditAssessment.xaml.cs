@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentTracker.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace StudentTracker.Views
         public EditAssessment()
         {
             InitializeComponent();
+        }
+        public EditAssessment(Tests test)
+        {
+            InitializeComponent();
+
         }
     }
 }

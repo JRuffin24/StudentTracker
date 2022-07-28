@@ -7,7 +7,7 @@
         <ToolbarItem x:Name="AddAssessment" Text="Add Assessment" Clicked="AddAssessment_Clicked" ></ToolbarItem>
     </ContentPage.ToolbarItems>
     <CollectionView x:Name="collectionView"
-                    ItemsSource="{Binding Term}"
+                    ItemsSource="{Binding Tests}"
                     EmptyView="No Assessments to display"
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_OnSelectionChanged">
