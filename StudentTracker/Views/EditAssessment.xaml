@@ -1,12 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentTracker.Views.EditAssessment">
-    <ContentPage.Content>
+             x:Class="StudentTracker.Views.EditAssessment"
+             Title="Edit Assessment">
+    <AbsoluteLayout>
+        <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
+        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
+        <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid  Padding="5" RowSpacing="1" ColumnSpacing="22" BackgroundColor="WhiteSmoke" Margin="25">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class ID:</Label>
+                <Entry x:Name="ClassID" Grid.Row="0" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
+
+                <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment ID:</Label>
+                <Entry x:Name="AssessmentID" Grid.Row="1" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
+                
+                <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
+                <Entry x:Name="ClassNameText" Style="{StaticResource NormalTitleStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" />
+
+                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Type:</Label>
+                <Picker x:Name="Assessment1TypePicker"  Grid.Row="3" Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Objective Assessment</x:String>
+                        <x:String>Performance Assessment</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Start Date" x:Name="TestStartDateLabel" Grid.Row="4" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="TestStartDatePicker"  Grid.Row="5" Grid.Column="0"/>
+
+                <Label Text="End Date" x:Name="TestEndDateLabel" Grid.Row="4" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="TestEndDatePicker"  Grid.Row="5" Grid.Column="1"/>
+
+                <Label Text="Enable Notifications" x:Name="notifications" Grid.Row="6" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="6" Grid.Column="1" Toggled="Notifications_OnToggle" />
+
+            </Grid>
         </StackLayout>
-    </ContentPage.Content>
+        
+        <Button Text="Save Edits" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15, 0.82, 0.25, 50" 
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="SaveButton_Clicked" />
+
+        <Button Text="Delete Assessment" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.93, 0.25, 55"
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Clicked="DeleteButton_Clicked" Style="{StaticResource MainButtonStyle}" />
+
+        <Button Text="Cancel" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#0d47a1r"  AbsoluteLayout.LayoutBounds="0.75, 0.93, 0.25, 50" 
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="CancelButton_Clicked" />
+    </AbsoluteLayout>
 </ContentPage>
