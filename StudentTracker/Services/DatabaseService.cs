@@ -55,6 +55,20 @@ namespace StudentTracker.Services
             };
             var id = await _db.InsertAsync(course);
         }
+        public static async Task AddAssessment(int assessmentID, int classID, string className, string assessmentType, DateTime startDate, DateTime endDate)
+        {
+            await Init();
+            var test = new Tests
+            {
+                AssessmentID = assessmentID,
+                ClassID = classID,
+                ClassName = className,
+                AssessmentType = assessmentType,
+                StartDate = startDate,
+                EndDate = endDate
+            };
+            var id = await _db.InsertAsync(test);
+        }
 
         public static async Task DeleteCourse(int courseID)
         {
@@ -66,6 +80,18 @@ namespace StudentTracker.Services
             await Init();
 
             await _db.DeleteAsync<Term>(termID);
+        }
+        public static async Task DeleteTest(int assessmentID)
+        {
+            await Init();
+            await _db.DeleteAsync<Tests>(assessmentID);
+        }
+        
+        public static async Task<IEnumerable<Tests>> GetTest()
+        {
+            await Init();
+            var test = await _db.Table<Tests>().ToListAsync();
+            return test;
         }
     
         public static async Task<IEnumerable<Course>> GetCourse()
@@ -79,6 +105,25 @@ namespace StudentTracker.Services
             await Init();
             var term = await _db.Table<Term>().ToListAsync();
             return term;
+        }
+
+        public static async Task UpdateAssessment(int assessmentID, int classID, string className, string assessmentType, DateTime startDate, DateTime endDate)
+        {
+            await Init();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();
+            
+            if (testQuery != null)
+            {
+                testQuery.AssessmentID = assessmentID;
+                testQuery.ClassID = classID;
+                testQuery.ClassName = className;
+                testQuery.AssessmentType = assessmentType;
+                testQuery.StartDate = startDate;
+                testQuery.EndDate = endDate;
+
+                await _db.UpdateAsync(testQuery);
+            }
+                
         }
 
         public static async Task UpdateCourse(int courseID, string courseName, string instructorName, string instructorEmail, string instructorPhone, DateTime classStart, DateTime classEnd, string courseStatus, string notes)

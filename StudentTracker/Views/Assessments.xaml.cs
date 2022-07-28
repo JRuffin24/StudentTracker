@@ -16,5 +16,9 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
         }
+        async void AddAssessment_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddAssessment());
+        }
     }
 }
