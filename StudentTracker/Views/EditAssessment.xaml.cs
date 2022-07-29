@@ -48,5 +48,10 @@ namespace StudentTracker.Views
         {
             await Navigation.PopAsync();
         }
+
+        private void Notifications_OnToggle(object sender, EventArgs e)
+        {
+
+        }
     }
 }
