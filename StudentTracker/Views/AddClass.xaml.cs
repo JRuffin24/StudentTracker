@@ -14,18 +14,21 @@ namespace StudentTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddClass : ContentPage
     {
+
+        private int selectedTermID;
         public AddClass()
         {
             InitializeComponent();
         }
-        public AddClass(Course course)
+        public AddClass(int termID)
         {
             InitializeComponent();
-            termID.Text = course.TermID.ToString();
+
+            TermID.Text = termID.ToString();
         }
         async void AddClassButton_Clicked(object sender, EventArgs e)
         {
-            await DatabaseService.AddCourse(Int32.Parse(termID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, instructorPhoneText.Text, classStartDatePicker.Date,
+            await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, instructorPhoneText.Text, classStartDatePicker.Date,
                 classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
             
             await Navigation.PushAsync(new Classes());

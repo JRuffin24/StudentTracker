@@ -26,6 +26,7 @@ namespace StudentTracker.Services
 
             await _db.CreateTableAsync<Term>();
             await _db.CreateTableAsync<Course>();
+            await _db.CreateTableAsync<Tests>();
         }
         public static async Task AddTerm(string termName, DateTime start, DateTime end)
         {

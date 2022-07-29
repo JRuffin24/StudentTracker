@@ -13,6 +13,8 @@ namespace StudentTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditTerm : ContentPage
     {
+
+        private int selectedTermID;
         public EditTerm()
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace StudentTracker.Views
             termTitle.Text = selectedTerm.TermName;
             startDatePicker.Date = selectedTerm.StartDate;
             EndDatePicker.Date = selectedTerm.EndDate;
+            selectedTermID = selectedTerm.Id;
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
@@ -47,7 +50,7 @@ namespace StudentTracker.Views
 
         async void ClassList_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Classes());
+            await Navigation.PushAsync(new Classes(selectedTermID));
         }
 
         

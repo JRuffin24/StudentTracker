@@ -14,9 +14,16 @@ namespace StudentTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Classes : ContentPage
     {
+
+        private int selectedTermID;
         public Classes()
         {
             InitializeComponent();
+        }
+        public Classes(int termID)
+        {
+            InitializeComponent();
+            selectedTermID = termID;
         }
         protected override async void OnAppearing()
         {
@@ -25,7 +32,7 @@ namespace StudentTracker.Views
         }
         async void AddClass_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddClass());
+            await Navigation.PushAsync(new AddClass(selectedTermID));
         }
         async void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {

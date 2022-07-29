@@ -31,7 +31,7 @@
                 
                 <!-- Move All rows down so Term ID is not in the blue-->
                 <Label Text="Term ID" x:Name="TermIDLabel" Grid.Row="2" Grid.Column="1"  Style="{StaticResource NormalTitleStyle}"/>
-                <Entry Text="{Binding Id}" x:Name="termID" Grid.Row="2" Grid.Column="2"  Style="{StaticResource MainEntryStyle}" />
+                <Entry Text="{Binding Id}" x:Name="TermID" Grid.Row="2" Grid.Column="2"  Style="{StaticResource MainEntryStyle}" />
 
                 <Label Text="Class Name" x:Name="ClassName" Grid.Row="3" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
                 <Entry x:Name="classNameText" Grid.Row="3" Grid.Column="2" ClearButtonVisibility="WhileEditing" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
