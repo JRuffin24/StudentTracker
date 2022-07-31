@@ -51,7 +51,7 @@ namespace StudentTracker.Views
         }
         async void AssessmentButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Assessments());
+            await Navigation.PushAsync(new AssessmentsList());
         }
         async void DeleteButton_Clicked(object sender, EventArgs e)
         {

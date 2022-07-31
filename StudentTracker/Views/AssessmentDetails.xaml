@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentTracker.Views.EditAssessment"
+             x:Class="StudentTracker.Views.AssessmentDetails"
              Title="Edit Assessment">
     <AbsoluteLayout>
         <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
@@ -33,6 +33,9 @@
                 
                 <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
                 <Entry x:Name="ClassNameText" Style="{StaticResource NormalTitleStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" />
+
+                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Name:</Label>
+                <Entry x:Name="AssessmentName" Grid.Row="0" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
 
                 <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Type:</Label>
                 <Picker x:Name="Assessment1TypePicker"  Grid.Row="3" Grid.Column="1">

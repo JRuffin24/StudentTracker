@@ -23,11 +23,18 @@ namespace StudentTracker.Views
 
         async void AddTermButton_Clicked(object sender, EventArgs e)
         {
-            await DatabaseService.AddTerm(termTitleText.Text, startDatePicker.Date, EndDatePicker.Date);
-
-            await Navigation.PushAsync( new MainPage());
+            if (LogicCheck.IsNull(termTitleText.Text))
+            {
+                if (startDatePicker.Date < EndDatePicker.Date)
+                {
+                    await DatabaseService.AddTerm(termTitleText.Text, startDatePicker.Date, EndDatePicker.Date);
+                    await Navigation.PushAsync( new MainPage());
+                }
+                else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
+            }
+            else await DisplayAlert("Error.", "Please ensure all fields are filled in.", "Ok");
         }
-
+                     
         async void CancelButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();

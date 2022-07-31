@@ -12,6 +12,7 @@ namespace StudentTracker.Models
         public int AssessmentID { get; set; }
         public int ClassID { get; set; }
         public string ClassName { get; set; }
+        public string AssessmentName { get; set; }
         public string AssessmentType { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

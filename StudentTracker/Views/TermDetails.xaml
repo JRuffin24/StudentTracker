@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="StudentTracker.Views.EditTerm"
+             x:Class="StudentTracker.Views.TermDetails"
              Title="Term Info">
     <AbsoluteLayout>
         <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
@@ -26,7 +26,7 @@
         <DatePicker x:Name="EndDatePicker"  AbsoluteLayout.LayoutBounds="0.5, 0.60, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" />
 
         <Label Text="View Class List" x:Name="ClassListLabel" AbsoluteLayout.LayoutBounds="0.5, 0.68, 0.5, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"  Style="{StaticResource NormalTitleStyle}"/>
-        <Button Text="→" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1" HorizontalOptions="Center" Clicked="ClassList_Clicked" AbsoluteLayout.LayoutBounds="0.5, .72, .20, 50 " 
+        <Button Text="→" FontSize="20" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1" HorizontalOptions="Center" Clicked="ClassList_Clicked" AbsoluteLayout.LayoutBounds="0.5, .72, .20, 50 " 
             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Style="{StaticResource MainButtonStyle}" />
 
         <Button Text="Save" BackgroundColor="Silver" TextColor="White" CornerRadius="5" BorderColor="#0d47a1"  AbsoluteLayout.LayoutBounds="0.15, 0.9, 0.25, 50" AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" 

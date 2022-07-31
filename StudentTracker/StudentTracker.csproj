@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Classes.xaml">
+    <EmbeddedResource Update="Views\ClassList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MainPage.xaml">
+    <EmbeddedResource Update="Views\TermList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="GeneralDevicesStyle.xaml">
@@ -39,16 +39,16 @@
     <EmbeddedResource Update="Views\AddTerm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Assessments.xaml">
+    <EmbeddedResource Update="Views\AssessmentsList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditAssessment.xaml">
+    <EmbeddedResource Update="Views\AssessmentDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditClass.xaml">
+    <EmbeddedResource Update="Views\ClassDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EditTerm.xaml">
+    <EmbeddedResource Update="Views\TermDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -58,8 +58,23 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Update="Views\AssessmentsList.xaml.cs">
+      <DependentUpon>AssessmentsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ClassList.xaml.cs">
+      <DependentUpon>ClassList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ClassDetails.xaml.cs">
+      <DependentUpon>ClassDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AssessmentDetails.xaml.cs">
+      <DependentUpon>AssessmentDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TermDetails.xaml.cs">
+      <DependentUpon>TermDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TermList.xaml.cs">
+      <DependentUpon>TermList.xaml</DependentUpon>
     </Compile>
     <Compile Update="GeneralDevicesStyle.xaml.cs">
       <DependentUpon>GeneralDevicesStyle.xaml</DependentUpon>

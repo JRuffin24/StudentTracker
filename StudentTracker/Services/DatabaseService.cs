@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StudentTracker.Models;
 using Xamarin.Essentials;
+using System.Linq;
 
 namespace StudentTracker.Services
 {
@@ -56,12 +57,12 @@ namespace StudentTracker.Services
             };
             var id = await _db.InsertAsync(course);
         }
-        public static async Task AddAssessment(int assessmentID, int classID, string className, string assessmentType, DateTime startDate, DateTime endDate)
+        public static async Task AddAssessment(int classID, string className,string assessmentName, string assessmentType, DateTime startDate, DateTime endDate)
         {
             await Init();
             var test = new Tests
             {
-                AssessmentID = assessmentID,
+                AssessmentName = assessmentName,
                 ClassID = classID,
                 ClassName = className,
                 AssessmentType = assessmentType,
@@ -88,18 +89,26 @@ namespace StudentTracker.Services
             await _db.DeleteAsync<Tests>(assessmentID);
         }
         
-        public static async Task<IEnumerable<Tests>> GetTest()
+        public static async Task<IEnumerable<Tests>> GetTest(int classId)
         {
             await Init();
-            var test = await _db.Table<Tests>().ToListAsync();
+            var test = await _db.Table<Tests>().Where(i => i.ClassID == classId) .ToListAsync();
             return test;
         }
+
+        //public static async Task<IEnumerable<Tests>> GetTestCount(int classId,)
+        //{
+        //    var objectiveCount = await _db.QueryAsync<Tests>($ Select Type from Tests where Test )
+        //}
     
-        public static async Task<IEnumerable<Course>> GetCourse()
+        public static async Task<IEnumerable<Course>> GetCourse(int termID)
         {
             await Init();
-            var course = await _db.Table<Course>().ToListAsync();
+            
+            var course = await _db.Table<Course>().Where(i => i.TermID == termID).ToListAsync();
+            
             return course;
+           
         }
         public static async Task<IEnumerable<Term>> GetTerm()
         {
@@ -108,7 +117,7 @@ namespace StudentTracker.Services
             return term;
         }
 
-        public static async Task UpdateAssessment(int assessmentID, int classID, string className, string assessmentType, DateTime startDate, DateTime endDate)
+        public static async Task UpdateAssessment(int assessmentID, int classID, string className, string assessmentName, string assessmentType, DateTime startDate, DateTime endDate)
         {
             await Init();
             var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();

@@ -24,14 +24,31 @@ namespace StudentTracker.Views
         {
             InitializeComponent();
 
-            TermID.Text = termID.ToString();
+            selectedTermID = termID;
         }
         async void AddClassButton_Clicked(object sender, EventArgs e)
         {
-            await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, instructorPhoneText.Text, classStartDatePicker.Date,
-                classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+            if (LogicCheck.IsNull(classNameText.Text) && 
+                LogicCheck.IsNull(instructorNameText.Text) &&
+                LogicCheck.IsNull(instructorEmailText.Text) &&
+                LogicCheck.IsNull(instructorPhoneText.Text))
+            {
+                if (LogicCheck.IsValidEmail(instructorEmailText.Text))
+                {
+                    if(classStartDatePicker.Date < classEndDatePicker.Date)
+                    {
+                        await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, 
+                            instructorPhoneText.Text, classStartDatePicker.Date,
+                        classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
             
-            await Navigation.PushAsync(new Classes());
+                        await Navigation.PushAsync(new ClassList());
+                    }
+                    else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
+                }
+                else await DisplayAlert("Error.", "Please ensure all fields are completed.", "Ok");
+            }
+            else await DisplayAlert("Error.", "Please provide a valid email address", "Ok");
+
         }
         async void CancelButton_Clicked(object sender, EventArgs e)
         {

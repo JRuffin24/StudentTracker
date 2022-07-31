@@ -12,16 +12,26 @@ using Xamarin.Forms.Xaml;
 namespace StudentTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Assessments : ContentPage
+    public partial class AssessmentsList : ContentPage
     {
-        public Assessments()
+        private int selectedClassID;
+        public AssessmentsList()
         {
             InitializeComponent();
+
+        }
+        public AssessmentsList(int classID)
+        {
+            InitializeComponent();
+            selectedClassID = classID;
+
         }
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            collectionView.ItemsSource = await DatabaseService.GetTest();
+            collectionView.ItemsSource = await DatabaseService.GetTest(selectedClassID);
+
+            
         }
         async void AddAssessment_Clicked(object sender, EventArgs e)
         {
@@ -32,7 +42,7 @@ namespace StudentTracker.Views
             if (e.CurrentSelection != null)
             {
                 Tests test = (Tests)e.CurrentSelection.FirstOrDefault();
-                await Navigation.PushAsync(new EditAssessment(test));
+                await Navigation.PushAsync(new AssessmentDetails(test));
             }
         }
     }

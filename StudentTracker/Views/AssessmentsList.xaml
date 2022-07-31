@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentTracker.Views.Assessments"
+             x:Class="StudentTracker.Views.AssessmentsList"
              Title="Assessmemts Page">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="AddAssessment" Text="Add Assessment" Clicked="AddAssessment_Clicked" ></ToolbarItem>

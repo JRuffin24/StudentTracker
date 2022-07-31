@@ -12,23 +12,26 @@ using StudentTracker.Models;
 namespace StudentTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Classes : ContentPage
+    public partial class ClassList : ContentPage
     {
 
         private int selectedTermID;
-        public Classes()
+        
+        public ClassList()
         {
             InitializeComponent();
         }
-        public Classes(int termID)
+        public ClassList(int termID)
         {
             InitializeComponent();
             selectedTermID = termID;
+
+            
         }
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            ClassCollectionView.ItemsSource = await DatabaseService.GetCourse();
+            ClassCollectionView.ItemsSource = await DatabaseService.GetCourse(selectedTermID);
         }
         async void AddClass_Clicked(object sender, EventArgs e)
         {

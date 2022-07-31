@@ -34,14 +34,14 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <Label Grid.Row="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Term Name:</Label>
-                        <Label Text="{Binding Term}" Style="{StaticResource NormalTitleStyle}" Grid.Column="1" VerticalTextAlignment="Center" />
+                        <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Term Name:</Label>
+                        <Label Text="{Binding TermName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
 
-                        <Label Grid.Row="1" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Start Date:</Label>
-                        <Label Text="{Binding StartDate}" Style="{StaticResource NormalTitleStyle}" Grid.Column="1" VerticalTextAlignment="Center" />
+                        <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Start Date:</Label>
+                        <Label Text="{Binding StartDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="2"  Grid.Column="0" VerticalTextAlignment="Center" />
 
-                        <Label Grid.Row="2" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">End Date:</Label>
-                        <Label Text="{Binding EndDate}" Style="{StaticResource NormalTitleStyle}" Grid.Column="2" VerticalTextAlignment="Center" />
+                        <Label Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">End Date:</Label>
+                        <Label Text="{Binding EndDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" />
 
                         
                         

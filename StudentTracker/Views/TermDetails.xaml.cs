@@ -11,15 +11,16 @@ using Xamarin.Forms.Xaml;
 namespace StudentTracker.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EditTerm : ContentPage
+    public partial class TermDetails : ContentPage
     {
 
         private int selectedTermID;
-        public EditTerm()
+        
+        public TermDetails()
         {
             InitializeComponent();
         }
-        public EditTerm(Term selectedTerm)
+        public TermDetails(Term selectedTerm)
         {
             InitializeComponent();
             //Populate controls
@@ -50,7 +51,7 @@ namespace StudentTracker.Views
 
         async void ClassList_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Classes(selectedTermID));
+            await Navigation.PushAsync(new ClassList(selectedTermID));
         }
 
         

@@ -36,13 +36,9 @@ namespace StudentTracker.Views
             if(e.CurrentSelection != null)
             {
                 Term term = (Term)e.CurrentSelection.FirstOrDefault();
-                await Navigation.PushAsync(new EditTerm(term));
+                await Navigation.PushAsync(new TermDetails(term));
             }
         }
-        async void ClassList_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Classes());
-        }
-
+       
     }
 }

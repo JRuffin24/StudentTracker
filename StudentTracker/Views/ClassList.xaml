@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="StudentTracker.Views.Classes"
+             x:Class="StudentTracker.Views.ClassList"
              Title="Class Page">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="AddTerm" Text="Add Term" Clicked="AddClass_Clicked" ></ToolbarItem>
+        <ToolbarItem x:Name="AddTerm" Text="Add Course" Clicked="AddClass_Clicked" ></ToolbarItem>
     </ContentPage.ToolbarItems>
     <CollectionView x:Name="ClassCollectionView"
                     ItemsSource="{Binding Course}"
@@ -41,7 +41,7 @@
                             </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
-                        <Label Text="{Binding ClassName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
+                        <Label Text="{Binding CourseName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Instructor Name:</Label>
                         <Label Text="{Binding InstructorName}" Style="{StaticResource NormalTitleStyle}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" />
@@ -53,10 +53,10 @@
                         <Label Text="{Binding InstructorEmail}" Style="{StaticResource NormalTitleStyle}" Grid.Row="3" Grid.Column="1" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Start Date:</Label>
-                        <Label Text="{Binding StartDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" />
+                        <Label Text="{Binding ClassStartDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="5" Grid.Column="0" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="4" Grid.Column="1" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">End Date:</Label>
-                        <Label Text="{Binding EndDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="5"  Grid.Column="1" VerticalTextAlignment="Center" />
+                        <Label Text="{Binding ClassEndDate}" Style="{StaticResource NormalTitleStyle}" Grid.Row="5"  Grid.Column="1" VerticalTextAlignment="Center" />
 
                         <Label Grid.Row="6" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Course Status:</Label>
                         <Label Text="{Binding CourseStatus}" Style="{StaticResource NormalTitleStyle}" Grid.Row="6" Grid.Column="1" VerticalTextAlignment="Center" />
