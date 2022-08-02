@@ -96,11 +96,13 @@ namespace StudentTracker.Services
             return test;
         }
 
-        //public static async Task<IEnumerable<Tests>> GetTestCount(int classId,)
+        //public static async void GetTestCount(int classId)
         //{
-        //    var objectiveCount = await _db.QueryAsync<Tests>($ Select Type from Tests where Test )
+        //    var objectiveCount = await _db.QueryAsync<Tests>($"Select AssessmentType from Tests where ClassID = '{ classId}'");
+
+        //    return objectiveCount;
         //}
-    
+
         public static async Task<IEnumerable<Course>> GetCourse(int termID)
         {
             await Init();

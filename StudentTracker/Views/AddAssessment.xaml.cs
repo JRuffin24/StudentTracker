@@ -30,11 +30,18 @@ namespace StudentTracker.Views
             {
                 if(TestStartDatePicker.Date < TestEndDatePicker.Date)
                 {
-                    
-                    await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), 
-                    TestStartDatePicker.Date, TestEndDatePicker.Date);
+                   //if(assessmentCount == 2)
+                    //{
+                       // await DisplayAlert("Alert", "You cannot add more than two exams. Please remove an exam and try again", "Ok");
+                   // }
+                   // else
+                   // {
+                        await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), 
+                        TestStartDatePicker.Date, TestEndDatePicker.Date);
 
-                    await Navigation.PushAsync(new AssessmentsList());
+                        await Navigation.PushAsync(new AssessmentsList());
+                   // }
+                   
                 }
                 else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
             }
