@@ -26,13 +26,13 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
-                <Entry x:Name="ClassName" Style="{StaticResource MainEntryStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center" IsReadOnly="true" />
+                <Entry x:Name="ClassName" Style="{StaticResource MainEntryStyle}" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Center"  />
 
                 <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class ID:</Label>
-                <Entry x:Name="ClassID" Style="{StaticResource MainEntryStyle}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center" IsReadOnly="true" />
+                <Entry x:Name="ClassID" Style="{StaticResource MainEntryStyle}" Grid.Row="1" Grid.Column="1" VerticalTextAlignment="Center"  />
 
                 <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Name:</Label>
-                <Entry x:Name="AssessmentName" Style="{StaticResource MainEntryStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" IsReadOnly="true" />
+                <Entry x:Name="AssessmentName" Style="{StaticResource MainEntryStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center"  />
 
                 <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Type:</Label>
                 <Picker x:Name="Assessment1TypePicker"  Grid.Row="3" Grid.Column="1">
@@ -50,6 +50,9 @@
                 <Label Text="Enable Notifications" x:Name="notifications" Grid.Row="6" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
                 <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="6" Grid.Column="1" Toggled="Notifications_OnToggle" />
 
+
+                <Button Text="Add Assessment" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15, 0.82, 0.25, 50" 
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="AddAssessmentButton_Clicked" />
 
             </Grid>
         </StackLayout>

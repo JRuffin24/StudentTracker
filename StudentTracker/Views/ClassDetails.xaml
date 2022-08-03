@@ -26,6 +26,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=" Auto" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <!-- Move All rows down so Term ID is not in the blue-->
@@ -64,6 +65,9 @@
                 </Picker>
                 <Label Text="Notes" x:Name="courseNotes" Grid.Row="10" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
                 <Editor x:Name="courseNotesText" Grid.Row="10" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
+
+                <ImageButton Source="share.png" Grid.Row="10" Grid.Column="2" Clicked="ShareButton_Clicked" />
+
 
                 <Label Text="Enable Notifications" Grid.Row="11" Grid.Column="0" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
                 <Switch x:Name="EnableNotificationsToggle" Grid.Row="11" Grid.Column="1" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" Margin="20" />

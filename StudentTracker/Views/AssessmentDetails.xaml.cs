@@ -63,13 +63,6 @@ namespace StudentTracker.Views
 
         }
 
-        //private async void ShareButton_Clicked(object sender, EventArgs e)
-        //{
-        //    await Share.RequestAsync(new ShareTextRequest
-        //    {
-        //        Text = Notes.Text,
-        //        Title = "Share your notes from this course!"
-        //    });
-        //}
+        
     }
 }

@@ -1,10 +1,12 @@
-﻿using StudentTracker.Services;
+﻿using SQLite;
+using StudentTracker.Services;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,6 +16,7 @@ namespace StudentTracker.Views
     public partial class AddAssessment : ContentPage
     {
         private string className;
+        private static SQLiteConnection dbSync;
         public AddAssessment()
         {
             InitializeComponent();
@@ -24,18 +27,17 @@ namespace StudentTracker.Views
             InitializeComponent();
             className = cName;
         }
+
+
+
         async void AddAssessmentButton_Clicked(object sender, EventArgs e)
         {
             if (LogicCheck.IsNull(AssessmentName.Text))
             {
                 if(TestStartDatePicker.Date < TestEndDatePicker.Date)
                 {
-                   //if(assessmentCount == 2)
-                    //{
-                       // await DisplayAlert("Alert", "You cannot add more than two exams. Please remove an exam and try again", "Ok");
-                   // }
-                   // else
-                   // {
+                    await DatabaseService.GetTestCount(int.Parse(ClassID.Text));
+                   
                         await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), 
                         TestStartDatePicker.Date, TestEndDatePicker.Date);
 

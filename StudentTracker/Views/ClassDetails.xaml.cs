@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -61,6 +61,16 @@ namespace StudentTracker.Views
             await DatabaseService.DeleteCourse(id);
 
             await Navigation.PopAsync();
+        }
+
+        async void ShareButton_Clicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = courseNotesText.Text,
+                Title = "Share your notes from this course!"
+
+            });
         }
     }
 }
