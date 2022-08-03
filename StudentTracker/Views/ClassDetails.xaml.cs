@@ -14,6 +14,8 @@ namespace StudentTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditClass : ContentPage
     {
+        private int selectedClassId;
+        private string selectedClassName;
         public EditClass()
         {
             InitializeComponent();
@@ -32,6 +34,9 @@ namespace StudentTracker.Views
             classEndDatePicker.Date = course.ClassEndDate;
             classStatusPicker.SelectedItem = course.CourseStatus;
             courseNotesText.Text = course.Notes;
+
+            selectedClassId = int.Parse(classID.Text);
+            selectedClassName = classNameText.Text;
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
@@ -51,7 +56,7 @@ namespace StudentTracker.Views
         }
         async void AssessmentButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AssessmentsList());
+            await Navigation.PushAsync(new AssessmentsList(selectedClassId,selectedClassName));
         }
         async void DeleteButton_Clicked(object sender, EventArgs e)
         {

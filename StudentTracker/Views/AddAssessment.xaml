@@ -18,6 +18,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -51,9 +52,8 @@
                 <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="6" Grid.Column="1" Toggled="Notifications_OnToggle" />
 
 
-                <Button Text="Add Assessment" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  AbsoluteLayout.LayoutBounds="0.15, 0.82, 0.25, 50" 
-                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" Clicked="AddAssessmentButton_Clicked" />
-
+                <Button Text="Add Assessment" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  Grid.Row="7" Grid.Column="0" Clicked="AddAssessmentButton_Clicked" />
+                <Button Text="Cancel" BackgroundColor="#0d47a1" TextColor="White" CornerRadius="5" BorderColor="#silver"  Grid.Row="7" Grid.Column="1" Clicked="CancelButton_Clicked" />
             </Grid>
         </StackLayout>
     </AbsoluteLayout>

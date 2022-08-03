@@ -15,17 +15,19 @@ namespace StudentTracker.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddAssessment : ContentPage
     {
-        private string className;
+        private string SelectedClassName;
+        private int selectedClassId;
         private static SQLiteConnection dbSync;
         public AddAssessment()
         {
             InitializeComponent();
             
         }
-        public AddAssessment(string cName)
+        public AddAssessment(string cName, int cID)
         {
             InitializeComponent();
-            className = cName;
+            SelectedClassName = cName;
+            selectedClassId = cID;
         }
 
 

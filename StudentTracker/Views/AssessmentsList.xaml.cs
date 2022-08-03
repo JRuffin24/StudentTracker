@@ -15,16 +15,17 @@ namespace StudentTracker.Views
     public partial class AssessmentsList : ContentPage
     {
         private int selectedClassID;
+        private string selectedClassName;
         public AssessmentsList()
         {
             InitializeComponent();
 
         }
-        public AssessmentsList(int classID)
+        public AssessmentsList(int classID, string className)
         {
             InitializeComponent();
             selectedClassID = classID;
-
+            selectedClassName = className;
         }
         protected override async void OnAppearing()
         {
@@ -35,7 +36,7 @@ namespace StudentTracker.Views
         }
         async void AddAssessment_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddAssessment());
+            await Navigation.PushAsync(new AddAssessment(selectedClassName,selectedClassID ));
         }
         async void CollectionView_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
