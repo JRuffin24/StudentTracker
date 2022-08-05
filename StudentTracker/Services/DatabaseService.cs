@@ -96,20 +96,42 @@ namespace StudentTracker.Services
             return test;
         }
 
-       public static async Task<int> GetTestCount(int classId)
+        public static async Task<int> GetTotalTestCount(int classId)
         {
-            int count = 0;
+            int totalTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests where ClassID = '{classId}'");
 
-            int testCount = await _db.ExecuteScalarAsync<int>("Select Count(*) from Tests");
+            return totalTestCount;
+        }
 
+        public static async Task<int> GetObjectiveTestCount(int classId)
+        {
+            //int count = 0;
+
+            //int ObjectiveTestCount = await _db.ExecuteScalarAsync<int>("Select Count(*) from Tests WHERE" ClassID = 'classId' AND WHERE AssessmentType = 'Objective Assessment'");
+            //int ObjectiveTestCount = await _db.QueryAsync<Tests>($"Select Count(AssessmentType) FROM Tests WHERE ClassID = '{classId}' AND AssessmentType = 'Objective Assessment'");
 
             //var assessmentCount = await _db.ExecuteScalarAsync<int>($"Select Count(AssessmentType) from Tests where ClassID = '{ classId}'");
 
             //var objCount = await _db.QueryAsync<Tests>($"Select AssessmentType FROM Tests Where ClassID ='{classId}' And AssessmentType ='Objective'");
-           
 
-            
-            return testCount;
+
+            //await Init();
+            //var ObjectiveTestCount = await _db.Table<Tests>()
+            //                                  .Where(i => i.ClassID == classId && i.AssessmentType == objective);
+            string obj = "Objective Assessment";
+            //int objectiveTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests where ClassID = '{classId}' AND where AssessmentType = 'Objective Assessment'");
+            int objectiveTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests WHERE ClassID = '" + classId + "' AND AssessmentType = '"+obj+"' ");
+
+
+            return objectiveTestCount;
+        }
+
+        public static async Task<int> GetPerformanceTestCount(int classId)
+        {
+            string perf = "Performance Assessment";
+            int performanceTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests where ClassID = '" + classId + "' AND AssessmentType = '" + perf + "' ");
+
+            return performanceTestCount;
         }
 
         public static async Task<IEnumerable<Course>> GetCourse(int termID)

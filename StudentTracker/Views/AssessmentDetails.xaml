@@ -18,6 +18,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -26,7 +27,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class ID:</Label>
-                <Entry x:Name="ClassID" Grid.Row="0" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
+                <Entry x:Name="ClassID"  Grid.Row="0" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
 
                 <Label Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment ID:</Label>
                 <Entry x:Name="AssessmentID" Grid.Row="1" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
@@ -34,24 +35,24 @@
                 <Label Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Class Name:</Label>
                 <Entry x:Name="ClassNameText" Style="{StaticResource NormalTitleStyle}" Grid.Row="2" Grid.Column="1" VerticalTextAlignment="Center" />
 
-                <Label Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Name:</Label>
-                <Entry x:Name="AssessmentName" Grid.Row="0" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
+                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Name:</Label>
+                <Entry x:Name="AssessmentName" Grid.Row="3" Grid.Column="1" Style="{StaticResource MainEntryStyle}" IsReadOnly="True" />
 
-                <Label Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Type:</Label>
-                <Picker x:Name="Assessment1TypePicker"  Grid.Row="3" Grid.Column="1">
+                <Label Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" Style="{StaticResource NormalTitleStyle}">Assessment Type:</Label>
+                <Picker x:Name="Assessment1TypePicker"  Grid.Row="4" Grid.Column="1">
                     <Picker.Items>
                         <x:String>Objective Assessment</x:String>
                         <x:String>Performance Assessment</x:String>
                     </Picker.Items>
                 </Picker>
-                <Label Text="Start Date" x:Name="TestStartDateLabel" Grid.Row="4" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
-                <DatePicker x:Name="TestStartDatePicker"  Grid.Row="5" Grid.Column="0"/>
+                <Label Text="Start Date" x:Name="TestStartDateLabel" Grid.Row="5" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="TestStartDatePicker"  Grid.Row="6" Grid.Column="0"/>
 
-                <Label Text="End Date" x:Name="TestEndDateLabel" Grid.Row="4" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
-                <DatePicker x:Name="TestEndDatePicker"  Grid.Row="5" Grid.Column="1"/>
+                <Label Text="End Date" x:Name="TestEndDateLabel" Grid.Row="5" Grid.Column="1" Style="{StaticResource NormalTitleStyle}"/>
+                <DatePicker x:Name="TestEndDatePicker"  Grid.Row="6" Grid.Column="1"/>
 
-                <Label Text="Enable Notifications" x:Name="notifications" Grid.Row="6" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
-                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="6" Grid.Column="1" Toggled="Notifications_OnToggle" />
+                <Label Text="Enable Notifications" x:Name="notifications" Grid.Row="7" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
+                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="7" Grid.Column="1" Toggled="Notifications_OnToggle" />
 
             </Grid>
         </StackLayout>

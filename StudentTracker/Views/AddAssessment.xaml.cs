@@ -28,25 +28,61 @@ namespace StudentTracker.Views
             InitializeComponent();
             SelectedClassName = cName;
             selectedClassId = cID;
+            ClassName.Text = SelectedClassName;
+            ClassID.Text = selectedClassId.ToString();
         }
 
 
 
         async void AddAssessmentButton_Clicked(object sender, EventArgs e)
         {
+            int totalTestCount = await DatabaseService.GetTotalTestCount(selectedClassId);
+            int objectiveCount = await DatabaseService.GetObjectiveTestCount(selectedClassId);
+            int performanceCount = await DatabaseService.GetPerformanceTestCount(selectedClassId);
+            
+
             if (LogicCheck.IsNull(AssessmentName.Text))
             {
-                if(TestStartDatePicker.Date < TestEndDatePicker.Date)
+                if (TestStartDatePicker.Date < TestEndDatePicker.Date)
                 {
-                    await DatabaseService.GetTestCount(int.Parse(ClassID.Text));
-                   
-                        await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), 
-                        TestStartDatePicker.Date, TestEndDatePicker.Date);
+                    if (totalTestCount >= 2)
+                    {
+                        await DisplayAlert("Error.", "This course has reached the maximum number of assessments. If you wish to add another test, delete a existing assessment.", "Ok");
+                        return;
+                    }
+                    else
+                    {
+                        if (Assessment1TypePicker.SelectedItem == "Objective Assessment")
+                        {
+                            if (objectiveCount == 1)
+                            {
+                                await DisplayAlert("Error.", "This course has reached the maximum number of Objective assessments. If you wish to add another test, delete the existing Objective assessment.", "Ok");
+                                return;
+                            }
+                            else
+                            {
+                                await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(),
+                                TestStartDatePicker.Date, TestEndDatePicker.Date);
+                            }
+                        }
+                        if (Assessment1TypePicker.SelectedItem == "Performance Assessment")
+                        {
+                            if (performanceCount == 1)
+                            {
+                                await DisplayAlert("Error.", "This course has reached the maximum number of Performance assessments. If you wish to add another test, delete the existing Performance assessment.", "Ok");
+                                return;
+                            }
+                            else
+                            {
+                                await DatabaseService.AddAssessment(int.Parse(ClassID.Text), ClassName.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(),
+                                TestStartDatePicker.Date, TestEndDatePicker.Date);
+                            }
+                        }
 
-                        await Navigation.PushAsync(new AssessmentsList());
-                   // }
-                   
+                        await Navigation.PushAsync(new AssessmentsList(selectedClassId,SelectedClassName));
+                    }
                 }
+
                 else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
             }
             else await DisplayAlert("Error.", "Please ensure all fields are completed.", "Ok");

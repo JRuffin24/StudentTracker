@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentTracker.Views.AddAssessment">
     <AbsoluteLayout>
-        <StackLayout>
+                                                                                                                                    <StackLayout>
             <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" BackgroundColor="WhiteSmoke" Margin="25">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
