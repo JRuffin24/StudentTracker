@@ -28,6 +28,8 @@ namespace StudentTracker.Views
         }
         async void AddClassButton_Clicked(object sender, EventArgs e)
         {
+            int totalClassCount = await DatabaseService.ClassTotalPerTerm(selectedTermID);
+
             if (LogicCheck.IsNull(classNameText.Text) && 
                 LogicCheck.IsNull(instructorNameText.Text) &&
                 LogicCheck.IsNull(instructorEmailText.Text) &&
@@ -37,11 +39,21 @@ namespace StudentTracker.Views
                 {
                     if(classStartDatePicker.Date < classEndDatePicker.Date)
                     {
-                        await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, 
+                        if(totalClassCount >= 6)
+                        {
+                            await DisplayAlert("Error.", "This term has reached the maximum number of courses. If you wish to add another class to this term, delete a existing class.", "Ok");
+                            return;
+                        }
+                        else
+                        {
+                            await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, 
                             instructorPhoneText.Text, classStartDatePicker.Date,
-                        classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+                            classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
             
-                        await Navigation.PushAsync(new ClassList());
+                            await Navigation.PushAsync(new ClassList(selectedTermID));
+                        }
+                        
+                        
                     }
                     else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
                 }

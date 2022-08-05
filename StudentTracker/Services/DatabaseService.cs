@@ -95,7 +95,11 @@ namespace StudentTracker.Services
             var test = await _db.Table<Tests>().Where(i => i.ClassID == classId) .ToListAsync();
             return test;
         }
-
+        public static async Task<int> ClassTotalPerTerm(int termId)
+        {
+            int totalClassCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Term WHERE Id = '" + termId + "' ");
+            return totalClassCount;
+        }
         public static async Task<int> GetTotalTestCount(int classId)
         {
             int totalTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests where ClassID = '{classId}'");
@@ -105,21 +109,9 @@ namespace StudentTracker.Services
 
         public static async Task<int> GetObjectiveTestCount(int classId)
         {
-            //int count = 0;
-
-            //int ObjectiveTestCount = await _db.ExecuteScalarAsync<int>("Select Count(*) from Tests WHERE" ClassID = 'classId' AND WHERE AssessmentType = 'Objective Assessment'");
-            //int ObjectiveTestCount = await _db.QueryAsync<Tests>($"Select Count(AssessmentType) FROM Tests WHERE ClassID = '{classId}' AND AssessmentType = 'Objective Assessment'");
-
-            //var assessmentCount = await _db.ExecuteScalarAsync<int>($"Select Count(AssessmentType) from Tests where ClassID = '{ classId}'");
-
-            //var objCount = await _db.QueryAsync<Tests>($"Select AssessmentType FROM Tests Where ClassID ='{classId}' And AssessmentType ='Objective'");
-
-
-            //await Init();
-            //var ObjectiveTestCount = await _db.Table<Tests>()
-            //                                  .Where(i => i.ClassID == classId && i.AssessmentType == objective);
+            
             string obj = "Objective Assessment";
-            //int objectiveTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests where ClassID = '{classId}' AND where AssessmentType = 'Objective Assessment'");
+
             int objectiveTestCount = await _db.ExecuteScalarAsync<int>($"Select Count(*) from Tests WHERE ClassID = '" + classId + "' AND AssessmentType = '"+obj+"' ");
 
 
