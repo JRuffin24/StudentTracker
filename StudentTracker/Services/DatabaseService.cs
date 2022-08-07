@@ -184,11 +184,11 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateCourseTurnOnNotifications(string classname, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateCourseTurnOnNotifications(int classId, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
             var courseQuery = await _db.Table<Course>()
-                 .Where(i => i.CourseName == classname)
+                 .Where(i => i.Id == classId)
                  .FirstOrDefaultAsync();
 
             if(courseQuery != null)
@@ -201,11 +201,11 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateCourseTurnOffNotifications(string className, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateCourseTurnOffNotifications(int classId, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
             var courseQuery = await _db.Table<Course>()
-                 .Where(i => i.CourseName == className)
+                 .Where(i => i.Id == classId)
                  .FirstOrDefaultAsync();
 
             if (courseQuery != null)
@@ -218,10 +218,10 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateAssessmentTurnOffNotifications(string assessmentName, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateAssessmentTurnOffNotifications(int assessmentID, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
-            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentName == assessmentName).FirstOrDefaultAsync();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();
 
             if (testQuery != null)
             {
@@ -234,10 +234,10 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateAssessmentTurnOnNotifications(string assessmentName, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateAssessmentTurnOnNotifications(int assessmentID, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
-            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentName == assessmentName).FirstOrDefaultAsync();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();
 
             if (testQuery != null)
             {
