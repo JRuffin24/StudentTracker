@@ -42,6 +42,7 @@ namespace StudentTracker.Services
         }
         public static async Task AddCourse(int termID, string courseName, string instructorName, string instructorEmail, string instructorPhone, DateTime classStart, DateTime classEnd, string courseStatus, string notes)
         {
+            
             await Init();
             var course = new Course
             {   
@@ -53,7 +54,8 @@ namespace StudentTracker.Services
                 ClassStartDate = classStart,
                 ClassEndDate = classEnd,
                 CourseStatus = courseStatus,
-                Notes = notes
+                Notes = notes,
+                
             };
             var id = await _db.InsertAsync(course);
         }
@@ -179,6 +181,72 @@ namespace StudentTracker.Services
                 courseQuery.ClassEndDate = classEnd;
 
                 await _db.UpdateAsync(courseQuery);
+            }
+        }
+
+        public static async Task UpdateCourseTurnOnNotifications(string classname, Boolean startNotifications, Boolean endNotifications)
+        {
+            await Init();
+            var courseQuery = await _db.Table<Course>()
+                 .Where(i => i.CourseName == classname)
+                 .FirstOrDefaultAsync();
+
+            if(courseQuery != null)
+            {
+                startNotifications = true;
+                endNotifications = true;
+                courseQuery.StartDateNotificationsOn = startNotifications;
+                courseQuery.EndDateNotificationsOn = endNotifications;
+
+            }
+        }
+
+        public static async Task UpdateCourseTurnOffNotifications(string className, Boolean startNotifications, Boolean endNotifications)
+        {
+            await Init();
+            var courseQuery = await _db.Table<Course>()
+                 .Where(i => i.CourseName == className)
+                 .FirstOrDefaultAsync();
+
+            if (courseQuery != null)
+            {
+                startNotifications = false;
+                endNotifications = false;
+                courseQuery.StartDateNotificationsOn = startNotifications;
+                courseQuery.EndDateNotificationsOn = endNotifications;
+
+            }
+        }
+
+        public static async Task UpdateAssessmentTurnOffNotifications(string assessmentName, Boolean startNotifications, Boolean endNotifications)
+        {
+            await Init();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentName == assessmentName).FirstOrDefaultAsync();
+
+            if (testQuery != null)
+            {
+                startNotifications = false;
+                endNotifications = false;
+                testQuery.StartDateNotificationsOn = startNotifications;
+                testQuery.EndDateNotificationsOn = endNotifications;
+
+                await _db.UpdateAsync(testQuery);
+            }
+        }
+
+        public static async Task UpdateAssessmentTurnOnNotifications(string assessmentName, Boolean startNotifications, Boolean endNotifications)
+        {
+            await Init();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentName == assessmentName).FirstOrDefaultAsync();
+
+            if (testQuery != null)
+            {
+                startNotifications = true;
+                endNotifications = true;
+                testQuery.StartDateNotificationsOn = startNotifications;
+                testQuery.EndDateNotificationsOn = endNotifications;
+
+                await _db.UpdateAsync(testQuery);
             }
         }
 

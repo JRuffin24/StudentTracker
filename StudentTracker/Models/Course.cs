@@ -18,5 +18,7 @@ namespace StudentTracker.Models
         public DateTime ClassEndDate { get; set; }
         public string CourseStatus { get; set; }
         public string Notes { get; set; }
+        public Boolean StartDateNotificationsOn { get; set; }
+        public Boolean EndDateNotificationsOn { get; set; }
     }
 }

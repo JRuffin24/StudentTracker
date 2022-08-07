@@ -16,5 +16,7 @@ namespace StudentTracker.Models
         public string AssessmentType { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        public Boolean StartDateNotificationsOn { get; set; }
+        public Boolean EndDateNotificationsOn { get; set; }
     }
 } 

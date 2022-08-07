@@ -40,6 +40,35 @@ namespace StudentTracker.Views
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
+            if(LogicCheck.IsNull(classNameText.Text)&&
+                LogicCheck.IsNull(instructorNameText.Text)&&
+                LogicCheck.IsNull(instructorEmailText.Text)&&
+                LogicCheck.IsNull(instructorPhoneText.Text))
+            {
+                if (LogicCheck.IsValidEmail(instructorEmailText.Text))
+                {
+                    if (EnableNotificationsToggle.IsToggled == true)
+                    {
+                        bool startNotifications = true;
+                        bool endNotifications = true;
+
+                        await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
+                        instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+
+                        await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                    }
+                    if(EnableNotificationsToggle.IsToggled == false)
+                    {
+                        bool startNotifications = false;
+                        bool endNotifications = false;
+
+                        await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
+                       instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+
+                        await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                    }
+                }
+            }
             await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
                 instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
 

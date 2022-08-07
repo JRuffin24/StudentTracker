@@ -45,10 +45,29 @@ namespace StudentTracker.Views
                             return;
                         }
                         else
-                        {
-                            await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, 
-                            instructorPhoneText.Text, classStartDatePicker.Date,
-                            classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+                        {   
+                            if(EnableNotificationsToggle.IsToggled == true)
+                            {
+                                bool startNotifications = true;
+                                bool endNotifications = true;
+
+                                await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text, 
+                                instructorPhoneText.Text, classStartDatePicker.Date,
+                                classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+
+                                await DatabaseService.UpdateCourseTurnOnNotifications(classNameText.Text, startNotifications, endNotifications);
+                            }
+                            if(EnableNotificationsToggle.IsToggled == false)
+                            {
+                                bool startNotifications = false;
+                                bool endNotifications = false;
+
+                                await DatabaseService.AddCourse(Int32.Parse(TermID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
+                                instructorPhoneText.Text, classStartDatePicker.Date,
+                                classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
+
+                                await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                            }
             
                             await Navigation.PushAsync(new ClassList(selectedTermID));
                         }
@@ -68,7 +87,7 @@ namespace StudentTracker.Views
         }
          async void Notifications_OnToggle(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

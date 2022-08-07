@@ -65,7 +65,7 @@
                 <Editor x:Name="courseNotesText" Grid.Row="11" Grid.Column="2" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
 
                 <Label Text="Enable Notifications" Grid.Row="12" Grid.Column="1" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
-                <Switch x:Name="EnableNotificationsToggle" Grid.Row="12" Grid.Column="2" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" Margin="20" />
+                <Switch x:Name="EnableNotificationsToggle" Grid.Row="12" Grid.Column="2" ThumbColor="#0d47a1" Margin="20" />
             </Grid>
         </StackLayout>
 
