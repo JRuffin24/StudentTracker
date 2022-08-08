@@ -137,6 +137,26 @@ namespace StudentTracker.Services
             return course;
            
         }
+
+        public static async Task<IEnumerable<Course>> GetCourse()
+        {
+            await Init();
+
+            var courseList = await _db.Table<Course>().ToListAsync();
+
+            return courseList;
+
+        }
+
+        public static async Task<IEnumerable<Tests>> GetTest()
+        {
+            await Init();
+            
+            var testList = await _db.Table<Tests>().ToListAsync();
+            
+            return testList;
+        }
+
         public static async Task<IEnumerable<Term>> GetTerm()
         {
             await Init();

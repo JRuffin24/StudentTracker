@@ -90,7 +90,6 @@ namespace StudentTracker.Views
             await Navigation.PopAsync();
         }
 
-
         
     }
 }
