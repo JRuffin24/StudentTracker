@@ -52,7 +52,7 @@
                 <DatePicker x:Name="TestEndDatePicker"  Grid.Row="6" Grid.Column="1"/>
 
                 <Label Text="Enable Notifications" x:Name="notifications" Grid.Row="7" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
-                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="7" Grid.Column="1" Toggled="Notifications_OnToggle" />
+                <Switch x:Name="EnableNotificationsToggle" ThumbColor="#0d47a1" Grid.Row="7" Grid.Column="1" />
 
             </Grid>
         </StackLayout>

@@ -48,7 +48,7 @@ namespace StudentTracker.Views
                         await DatabaseService.UpdateAssessment(Int32.Parse(AssessmentID.Text), Int32.Parse(ClassID.Text), ClassNameText.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), TestStartDatePicker.Date,
                         TestEndDatePicker.Date);
 
-                        await DatabaseService.UpdateAssessmentTurnOnNotifications(Int32.Parse(AssessmentID.Text), startNotifications, endNotifications);
+                        await DatabaseService.UpdateAssessmentTurnOnNotifications(AssessmentName.Text, startNotifications, endNotifications);
                         
                     }
 
@@ -60,7 +60,7 @@ namespace StudentTracker.Views
                         await DatabaseService.UpdateAssessment(Int32.Parse(AssessmentID.Text), Int32.Parse(ClassID.Text), ClassNameText.Text, AssessmentName.Text, Assessment1TypePicker.SelectedItem.ToString(), TestStartDatePicker.Date,
                         TestEndDatePicker.Date);
 
-                        await DatabaseService.UpdateAssessmentTurnOffNotifications(Int32.Parse(AssessmentID.Text), startNotifications, endNotifications);
+                        await DatabaseService.UpdateAssessmentTurnOffNotifications(AssessmentName.Text, startNotifications, endNotifications);
                         await Navigation.PopAsync();
                     }
                     await Navigation.PopAsync();

@@ -238,10 +238,10 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateAssessmentTurnOffNotifications(int assessmentID, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateAssessmentTurnOffNotifications(int assessmentId, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
-            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentId).FirstOrDefaultAsync();
 
             if (testQuery != null)
             {
@@ -254,10 +254,10 @@ namespace StudentTracker.Services
             }
         }
 
-        public static async Task UpdateAssessmentTurnOnNotifications(int assessmentID, Boolean startNotifications, Boolean endNotifications)
+        public static async Task UpdateAssessmentTurnOnNotifications(int assessmentId, Boolean startNotifications, Boolean endNotifications)
         {
             await Init();
-            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentID).FirstOrDefaultAsync();
+            var testQuery = await _db.Table<Tests>().Where(i => i.AssessmentID == assessmentId).FirstOrDefaultAsync();
 
             if (testQuery != null)
             {
