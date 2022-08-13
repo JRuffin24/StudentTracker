@@ -55,7 +55,7 @@ namespace StudentTracker.Views
                         await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
                         instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
 
-                        await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                        await DatabaseService.UpdateCourseTurnOffNotifications(Int32.Parse(classID.Text), startNotifications, endNotifications);
                     }
                     if(EnableNotificationsToggle.IsToggled == false)
                     {
@@ -65,7 +65,7 @@ namespace StudentTracker.Views
                         await DatabaseService.UpdateCourse(Int32.Parse(classID.Text), classNameText.Text, instructorNameText.Text, instructorEmailText.Text,
                        instructorPhoneText.Text, classStartDatePicker.Date, classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
 
-                        await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                        await DatabaseService.UpdateCourseTurnOffNotifications(Int32.Parse(classID.Text), startNotifications, endNotifications);
                     }
                 }
             }
@@ -79,10 +79,7 @@ namespace StudentTracker.Views
         {
             await Navigation.PopAsync();
         }
-        private void Notifications_OnToggle(object sender, EventArgs e)
-        {
-
-        }
+        
         async void AssessmentButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AssessmentsList(selectedClassId,selectedClassName));

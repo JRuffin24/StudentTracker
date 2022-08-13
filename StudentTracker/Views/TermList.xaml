@@ -5,6 +5,7 @@
              Title="Term Page">
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="AddTerm" Text="Add Term" Clicked="AddTerm_Clicked" ></ToolbarItem>
+        <ToolbarItem x:Name="AppSettings" Text="App Settings" Clicked="AppSettingsButton_Clicked" />
     </ContentPage.ToolbarItems>
     
     <CollectionView x:Name="collectionView"

@@ -3,6 +3,9 @@ using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
+using StudentTracker.Services;
+using Settings = StudentTracker.Services.Settings;
 
 namespace StudentTracker
 {
@@ -14,9 +17,21 @@ namespace StudentTracker
         {
             InitializeComponent();
             LoadStyles();
-            var mainPage = new MainPage();
+
+            if (Settings.FirstRun == true)
+            {
+                DatabaseService.LoadSampleData();
+
+                Settings.FirstRun = false;
+            }
+
+            // DatabaseService.LoadSampleData();
+
+            var mainPage = new MainPage();            
             var navPage = new NavigationPage(mainPage);
             MainPage = navPage;
+
+            
         }
         void LoadStyles()
         {

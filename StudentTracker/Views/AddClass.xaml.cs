@@ -55,7 +55,9 @@ namespace StudentTracker.Views
                                 instructorPhoneText.Text, classStartDatePicker.Date,
                                 classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
 
-                                await DatabaseService.UpdateCourseTurnOnNotifications(classNameText.Text, startNotifications, endNotifications);
+                                int courseId = await DatabaseService.GetCourseID(Int32.Parse(TermID.Text), classNameText.Text);
+
+                                await DatabaseService.UpdateCourseTurnOnNotifications(courseId, startNotifications, endNotifications);
                             }
                             if(EnableNotificationsToggle.IsToggled == false)
                             {
@@ -66,7 +68,9 @@ namespace StudentTracker.Views
                                 instructorPhoneText.Text, classStartDatePicker.Date,
                                 classEndDatePicker.Date, classStatusPicker.SelectedItem.ToString(), courseNotesText.Text);
 
-                                await DatabaseService.UpdateCourseTurnOffNotifications(classNameText.Text, startNotifications, endNotifications);
+                                int courseId = await DatabaseService.GetCourseID(Int32.Parse(TermID.Text), classNameText.Text);
+
+                                await DatabaseService.UpdateCourseTurnOffNotifications(courseId, startNotifications, endNotifications);
                             }
             
                             await Navigation.PushAsync(new ClassList(selectedTermID));
@@ -85,9 +89,6 @@ namespace StudentTracker.Views
         {
             await Navigation.PopAsync();
         }
-         async void Notifications_OnToggle(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }

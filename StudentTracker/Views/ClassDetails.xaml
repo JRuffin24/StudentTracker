@@ -2,6 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentTracker.Views.EditClass">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ShareNotes" Text="Share Notes" Clicked="ShareButton_Clicked" ></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <AbsoluteLayout>
         <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
@@ -65,8 +68,6 @@
                 </Picker>
                 <Label Text="Notes" x:Name="courseNotes" Grid.Row="10" Grid.Column="0" Style="{StaticResource NormalTitleStyle}"/>
                 <Editor x:Name="courseNotesText" Grid.Row="10" Grid.Column="1" Keyboard="Default" Style="{StaticResource MainEntryStyle}"/>
-
-                <ImageButton Source="share.png" Grid.Row="10" Grid.Column="2" Clicked="ShareButton_Clicked" />
 
 
                 <Label Text="Enable Notifications" Grid.Row="11" Grid.Column="0" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>

@@ -13,6 +13,8 @@ namespace StudentTracker.Services
    public static class DatabaseService
     {
         private static SQLiteAsyncConnection _db;
+        private static int _newTermId;
+        private static int _newClassId;
         static async Task Init()
         {
            
@@ -28,6 +30,15 @@ namespace StudentTracker.Services
             await _db.CreateTableAsync<Term>();
             await _db.CreateTableAsync<Course>();
             await _db.CreateTableAsync<Tests>();
+        }
+
+        public static async Task DeleteAllItems()
+        {
+            await _db.DropTableAsync<Term>();
+            await _db.DropTableAsync<Course>();
+            await _db.DropTableAsync<Tests>();
+
+            _db = null;
         }
         public static async Task AddTerm(string termName, DateTime start, DateTime end)
         {
@@ -128,6 +139,20 @@ namespace StudentTracker.Services
             return performanceTestCount;
         }
 
+        public static async Task <int> GetCourseID(int termID, string className)
+        {
+            int courseID = await _db.ExecuteScalarAsync<int>($"Select ID from Course where TermID = '" + termID + "' AND CourseName = '" + className + "'");
+
+            return courseID;
+        }
+
+        public static async Task<int> GetTermID(string termName)
+        {
+            int termID = await _db.ExecuteScalarAsync<int>($"Select Id from Term where TermName = '" + termName + "'");
+
+            return termID;
+        }
+
         public static async Task<IEnumerable<Course>> GetCourse(int termID)
         {
             await Init();
@@ -147,6 +172,7 @@ namespace StudentTracker.Services
             return courseList;
 
         }
+        
 
         public static async Task<IEnumerable<Tests>> GetTest()
         {
@@ -287,6 +313,69 @@ namespace StudentTracker.Services
                 await _db.UpdateAsync(termQuery);
             }
         }
+
+        public static async void LoadSampleData()
+        {
+            await Init();
+
+            Term term = new Term
+            {
+                TermName = "Dummy Term",
+                StartDate = DateTime.Parse("7/1/2022 12:00:00 PM"),
+                EndDate = DateTime.Parse("8/31/2022 11:59:59 PM")
+            };
+            await _db.InsertAsync(term);
+
+            _newTermId = term.Id; //Grabbed from term just created
+
+            Course course = new Course
+            {
+                TermID = _newTermId,
+                CourseName = "Mobile App Development",
+                InstructorName = "Jarrett Ruffin",
+                InstructorEmail = "jruff14@wgu.edu",
+                InstructorPhone = "216-299-9849",
+                ClassStartDate = DateTime.Parse("7/2/2022 12:00:00 PM"),
+                ClassEndDate = DateTime.Parse("8/15/2022 11:59:59 PM"),
+                CourseStatus = "In-Progress",
+                Notes = "Mobile Apps are fun!",
+                StartDateNotificationsOn = true,
+                EndDateNotificationsOn = true
+            };
+
+            await _db.InsertAsync(course);
+
+            _newClassId = course.Id;
+
+            Tests test1 = new Tests
+            {
+                ClassID = _newClassId,
+                ClassName = "Mobile App Development",
+                AssessmentName = "test1",
+                AssessmentType = "Performance Assessment",
+                StartDate = DateTime.Parse("7/10/2022 12:00:00 PM"),
+                EndDate = DateTime.Parse("7/12/2022 11:59:59 PM"),
+                StartDateNotificationsOn = true,
+                EndDateNotificationsOn = true
+            };
+
+            await _db.InsertAsync(test1);
+
+            Tests test2 = new Tests
+            {
+                ClassID = _newClassId,
+                ClassName = "Mobile App Development",
+                AssessmentName = "test2",
+                AssessmentType = "Objective Assessment",
+                StartDate = DateTime.Parse("8/10/2022 12:00:00 PM"),
+                EndDate = DateTime.Parse("8/12/2022 11:59:59 PM"),
+                StartDateNotificationsOn = true,
+                EndDateNotificationsOn = true
+            };
+
+            await _db.InsertAsync(test2);
+        }
+
 
     }
 }
