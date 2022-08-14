@@ -6,10 +6,6 @@
         <ToolbarItem x:Name="ShareNotes" Text="Share Notes" Clicked="ShareButton_Clicked" ></ToolbarItem>
     </ContentPage.ToolbarItems>
     <AbsoluteLayout>
-        <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
-        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
-        <Image Source="WGULogo.png" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
-
         <StackLayout>
             <Grid Padding="5" RowSpacing="0.5" ColumnSpacing="22" Margin="25">
                 <Grid.RowDefinitions>
@@ -71,7 +67,7 @@
 
 
                 <Label Text="Enable Notifications" Grid.Row="11" Grid.Column="0" x:Name="notifications" Style="{StaticResource NormalTitleStyle}"/>
-                <Switch x:Name="EnableNotificationsToggle" Grid.Row="11" Grid.Column="1" ThumbColor="#0d47a1" Toggled="Notifications_OnToggle" Margin="20" />
+                <Switch x:Name="EnableNotificationsToggle" Grid.Row="11" Grid.Column="1" ThumbColor="#0d47a1" Margin="20" />
 
             </Grid>
         </StackLayout>

@@ -37,6 +37,15 @@ namespace StudentTracker.Views
 
             selectedClassId = int.Parse(classID.Text);
             selectedClassName = classNameText.Text;
+
+            if(course.StartDateNotificationsOn == true && course.EndDateNotificationsOn == true)
+            {
+                EnableNotificationsToggle.IsToggled = true;
+            }
+            else
+            {
+                EnableNotificationsToggle.IsToggled = false;
+            }
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {

@@ -20,10 +20,6 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <AbsoluteLayout>
-                    <BoxView BackgroundColor="#0d47a1" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" />
-                    <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="0.5, 0.5, 0.9,0.9 " AbsoluteLayout.LayoutFlags="All" />
-                    <Image Source="WGULogo.png" Aspect="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Opacity="0.3" />
-
                     <StackLayout>
                     <Grid Padding="5" RowSpacing="1" ColumnSpacing="22" Margin="25"  BackgroundColor="WhiteSmoke">
                         <Grid.RowDefinitions>

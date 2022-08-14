@@ -30,7 +30,14 @@ namespace StudentTracker.Views
             TestStartDatePicker.Date = test.StartDate;
             TestEndDatePicker.Date = test.EndDate;
 
-           
+           if(test.StartDateNotificationsOn == true && test.EndDateNotificationsOn == true)
+            {
+                EnableNotificationsToggle.IsToggled = true;
+            }
+            else
+            {
+                EnableNotificationsToggle.IsToggled = false;
+            }
         }
 
         async void SaveButton_Clicked(object sender, EventArgs e)
