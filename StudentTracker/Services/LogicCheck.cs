@@ -54,8 +54,11 @@ namespace StudentTracker.Services
         }
         public static bool IsNull(string entry)
         {
-            if (!String.IsNullOrEmpty(entry))
+            if (String.IsNullOrEmpty(entry))
+            {
                 return true;
+            }
+            else   
             return false;
         }
     }

@@ -54,7 +54,5 @@ namespace StudentTracker.Views
             await Navigation.PushAsync(new ClassList(selectedTermID));
         }
 
-        
-       
     }
 }

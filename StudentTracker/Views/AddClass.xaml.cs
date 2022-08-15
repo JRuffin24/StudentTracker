@@ -16,23 +16,28 @@ namespace StudentTracker.Views
     {
 
         private int selectedTermID;
+        
         public AddClass()
         {
             InitializeComponent();
         }
-        public AddClass(int termID)
+        public AddClass(int termID, string className)
         {
             InitializeComponent();
 
-            selectedTermID = termID;
+            selectedTermID = termID;            
+            TermID.Text = selectedTermID.ToString();
         }
         async void AddClassButton_Clicked(object sender, EventArgs e)
         {
             int totalClassCount = await DatabaseService.ClassTotalPerTerm(selectedTermID);
 
-            if (LogicCheck.IsNull(classNameText.Text) && 
-                LogicCheck.IsNull(instructorNameText.Text) &&
-                LogicCheck.IsNull(instructorEmailText.Text) &&
+            //Logic checks to make sure fields are not left blank, the email address is valid, start date is before end date and the total class count is
+            //less than six
+
+            if (LogicCheck.IsNull(classNameText.Text) || 
+                LogicCheck.IsNull(instructorNameText.Text) ||
+                LogicCheck.IsNull(instructorEmailText.Text) ||
                 LogicCheck.IsNull(instructorPhoneText.Text))
             {
                 if (LogicCheck.IsValidEmail(instructorEmailText.Text))

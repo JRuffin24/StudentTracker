@@ -17,7 +17,6 @@ namespace StudentTracker.Views
     {
         private string SelectedClassName;
         private int selectedClassId;
-        private static SQLiteConnection dbSync;
         public AddAssessment()
         {
             InitializeComponent();
@@ -40,11 +39,11 @@ namespace StudentTracker.Views
             int objectiveCount = await DatabaseService.GetObjectiveTestCount(selectedClassId);
             int performanceCount = await DatabaseService.GetPerformanceTestCount(selectedClassId);
             
-
+            //Logic check to make sure Assessment name is not empty.
             if (LogicCheck.IsNull(AssessmentName.Text))
-            {
+            {    //Logic check to make sure start date is before end date.
                 if (TestStartDatePicker.Date < TestEndDatePicker.Date)
-                {
+                {   //Logic check to make sure the total test count is not larger 2
                     if (totalTestCount >= 2)
                     {
                         await DisplayAlert("Error.", "This course has reached the maximum number of assessments. If you wish to add another test, delete a existing assessment.", "Ok");
@@ -91,10 +90,6 @@ namespace StudentTracker.Views
         async void CancelButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
-        }
-        private void Notifications_OnToggle(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -19,9 +19,11 @@ namespace StudentTracker.Views
     public partial class MainPage : ContentPage
     {
         public bool pushNotification = true;
+       
         public  MainPage()
         {
             InitializeComponent();
+
         }
         protected override async void OnAppearing()
         {
