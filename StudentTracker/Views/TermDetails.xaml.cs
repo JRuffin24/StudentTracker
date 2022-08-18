@@ -32,9 +32,17 @@ namespace StudentTracker.Views
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
-            await DatabaseService.UpdateTerm(Int32.Parse(termID.Text), termTitle.Text, startDatePicker.Date, EndDatePicker.Date);
+            if (!LogicCheck.IsNull(termTitle.Text))
+            {
+                if(startDatePicker.Date < EndDatePicker.Date)
+                {
+                    await DatabaseService.UpdateTerm(Int32.Parse(termID.Text), termTitle.Text, startDatePicker.Date, EndDatePicker.Date);
 
-            await Navigation.PopAsync();
+                    await Navigation.PopAsync();
+                }
+                else await DisplayAlert("Error.", "Please ensure start date is before end date.", "Ok");
+            }
+            else await DisplayAlert("Error.", "Please ensure all fields are filled in.", "Ok");
         }
         async void CancelButton_Clicked(object sender, EventArgs e)
         {

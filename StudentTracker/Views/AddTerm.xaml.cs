@@ -23,7 +23,7 @@ namespace StudentTracker.Views
 
         async void AddTermButton_Clicked(object sender, EventArgs e)
         {
-            if (LogicCheck.IsNull(termTitleText.Text))
+            if (!LogicCheck.IsNull(termTitleText.Text))
             {
                 if (startDatePicker.Date < EndDatePicker.Date)
                 {

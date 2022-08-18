@@ -49,10 +49,10 @@ namespace StudentTracker.Views
         }
         async void SaveButton_Clicked(object sender, EventArgs e)
         {
-            if(LogicCheck.IsNull(classNameText.Text)&&
-                LogicCheck.IsNull(instructorNameText.Text)&&
-                LogicCheck.IsNull(instructorEmailText.Text)&&
-                LogicCheck.IsNull(instructorPhoneText.Text))
+            if(!LogicCheck.IsNull(classNameText.Text)&&
+                !LogicCheck.IsNull(instructorNameText.Text)&&
+                !LogicCheck.IsNull(instructorEmailText.Text)&&
+                !LogicCheck.IsNull(instructorPhoneText.Text))
             {
                 if (LogicCheck.IsValidEmail(instructorEmailText.Text))
                 {
